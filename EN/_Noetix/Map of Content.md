@@ -40,7 +40,7 @@ updated: 2026-08-16
 - [[8.Configure Flake8]]
 - [[9.Create the Django Project]]
 - [[10.Run the Django Development Server]]
-- [[11.Section Summary]]
+- [[11.Project Setup — Section Summary]]
 
 ## 05 · GitHub Actions
 
@@ -114,7 +114,7 @@ updated: 2026-08-16
 - [[8.DRF – Tests for “Manage User” API]]
 - [[9.Implement “Manage User”]]
 - [[10.Test the User API in the Browser]]
-- [[11.Section Summary]]
+- [[11.User API — Section Summary]]
 
 ## 12 · Build Recipe API
 

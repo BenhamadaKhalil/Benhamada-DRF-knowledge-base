@@ -7,6 +7,8 @@ updated: 2026-08-16
 
 ![[noetix-banner.svg]]
 
+> 🇸🇦 **العربية** — النسخة العربية قيد الإنشاء: [[الصفحة الرئيسية]]
+
 > [!QUOTE] Noetix
 > *noetic* — of or relating to the intellect; knowledge apprehended directly by the mind.
 > This vault is not a pile of notes. It is a **system for knowing Django REST Framework.**

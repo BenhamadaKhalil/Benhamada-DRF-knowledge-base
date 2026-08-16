@@ -57,10 +57,12 @@ Or open [Noetix Home](EN/_Noetix/Noetix%20Home.md) — the dashboard everything 
 
 | | | |
 | --- | --- | --- |
-| 🇬🇧 **English** | [`EN/`](EN) | ✅ complete |
-| 🇸🇦 **العربية** | [`AR/`](AR) | 🚧 in progress — [plan](AR/README.md) |
+| 🇬🇧 **English** | [`EN/`](EN) | ✅ complete — [start here](EN/_Noetix/Noetix%20Home.md) |
+| 🇸🇦 **العربية** | [`AR/`](AR) | 🚧 in progress — [ابدأ من هنا](AR/_Noetix/الصفحة%20الرئيسية.md) |
 
 Diagrams in [`assets/`](assets) are shared by both editions.
+
+The Arabic edition translates the **concept and reference layers first** — the pages you reopen and search — rather than working front-to-back through the course. Prose is Arabic; code, function names and error messages stay in English, because that's how you'll meet them in the terminal.
 
 ---
 
