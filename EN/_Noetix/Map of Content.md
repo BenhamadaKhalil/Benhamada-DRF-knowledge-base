@@ -233,6 +233,8 @@ updated: 2026-08-16
 - [[11.Email and Mailers]]
 - [[12.Management Commands]]
 - [[13.Internationalization]]
+- [[14.WSGI and ASGI]] ⭐
+- [[15.App Anatomy — Every File and What Belongs In It]] ⭐
 
 ## 23 · What to master next
 
