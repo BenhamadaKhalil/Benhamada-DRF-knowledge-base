@@ -73,14 +73,3 @@ Used to manage a specific recipe.
 - `PUT` replaces the whole object.
     
 - `PATCH` updates specific fields only.
-    
-
----
-
-If you want, I can also generate:
-
-- API test checklist
-    
-- Django REST Framework implementation plan
-    
-- Or Postman test examples

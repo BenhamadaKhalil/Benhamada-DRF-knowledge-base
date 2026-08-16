@@ -82,13 +82,3 @@ Refactoring:
 - Works best with TDD
     
 - Next lesson: Refactor Tag & Ingredient endpoints using inheritance
-    
-
----
-
-If you'd like, I can also create:  
-✅ A refactoring checklist  
-✅ A diagram of the new inheritance structure  
-✅ A before/after comparison
-
-Just tell me!

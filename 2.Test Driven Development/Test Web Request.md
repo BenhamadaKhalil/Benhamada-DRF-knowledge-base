@@ -308,7 +308,3 @@ You ask:
 > "How should this feature behave?"
 
 Then you implement it correctly.
-
----
-
-If you want, I can also create a **Django Notes Template for Obsidian** so every video stays perfectly organized.
