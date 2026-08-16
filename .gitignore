@@ -1,5 +1,34 @@
+# ── Obsidian ──────────────────────────────────────────────
 .obsidian/
-*.zip
-__pycache__/
-*.pyc
+.trash/
+
+# ── OS ────────────────────────────────────────────────────
 .DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# ── iCloud ────────────────────────────────────────────────
+.icloud
+*.icloud
+
+# ── Editors ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+
+# ── Archives ──────────────────────────────────────────────
+*.zip
+
+# ── Secrets (in case example projects land here) ──────────
+.env
+*.env
+!.env.sample
+
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
