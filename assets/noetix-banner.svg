@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="Noetix by KB — a Django REST Framework knowledge base">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1020"/>
+      <stop offset="55%" stop-color="#111A33"/>
+      <stop offset="100%" stop-color="#0A1526"/>
+    </linearGradient>
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6EE7F9"/>
+      <stop offset="50%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6EE7F9" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#6EE7F9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="340" rx="24" fill="url(#bg)"/>
+  <circle cx="185" cy="170" r="210" fill="url(#glow)"/>
+  <circle cx="1010" cy="90" r="200" fill="url(#glow2)"/>
+
+  <!-- constellation glyph: a mind as a graph -->
+  <g transform="translate(120,170)" stroke="#6EE7F9" stroke-opacity="0.55" fill="none" stroke-width="1.6">
+    <path d="M0,-62 L54,-31 L54,31 L0,62 L-54,31 L-54,-31 Z"/>
+    <path d="M0,-62 L0,62 M-54,-31 L54,31 M54,-31 L-54,31"/>
+    <path d="M0,-96 L0,-62 M83,-48 L54,-31 M83,48 L54,31 M0,96 L0,62 M-83,48 L-54,31 M-83,-48 L-54,-31" stroke-opacity="0.3"/>
+  </g>
+  <g transform="translate(120,170)" fill="#0B1020" stroke="#A78BFA" stroke-width="2">
+    <circle cx="0" cy="-62" r="7"/><circle cx="54" cy="-31" r="7"/><circle cx="54" cy="31" r="7"/>
+    <circle cx="0" cy="62" r="7"/><circle cx="-54" cy="31" r="7"/><circle cx="-54" cy="-31" r="7"/>
+  </g>
+  <circle cx="120" cy="170" r="13" fill="#6EE7F9"/>
+  <g transform="translate(120,170)" fill="#34D399" fill-opacity="0.9">
+    <circle cx="0" cy="-96" r="4"/><circle cx="83" cy="-48" r="4"/><circle cx="83" cy="48" r="4"/>
+    <circle cx="0" cy="96" r="4"/><circle cx="-83" cy="48" r="4"/><circle cx="-83" cy="-48" r="4"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="278" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="94" font-weight="700"
+        letter-spacing="2" fill="url(#wordmark)">Noetix</text>
+  <text x="286" y="196" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="19"
+        letter-spacing="7" fill="#93A0BE">B Y &#160; K B</text>
+
+  <line x1="278" y1="224" x2="1080" y2="224" stroke="#24304D" stroke-width="1.5"/>
+
+  <text x="278" y="262" font-family="ui-sans-serif, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="25" fill="#E6EAF4">
+    A Django REST Framework knowledge base — built from first principles.
+  </text>
+
+  <!-- chips -->
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="14">
+    <rect x="278" y="282" width="104" height="30" rx="15" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.45"/>
+    <text x="330" y="302" fill="#34D399" text-anchor="middle">Django</text>
+
+    <rect x="392" y="282" width="72" height="30" rx="15" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.45"/>
+    <text x="428" y="302" fill="#6EE7F9" text-anchor="middle">DRF</text>
+
+    <rect x="474" y="282" width="66" height="30" rx="15" fill="#1A1633" stroke="#A78BFA" stroke-opacity="0.45"/>
+    <text x="507" y="302" fill="#A78BFA" text-anchor="middle">TDD</text>
+
+    <rect x="550" y="282" width="86" height="30" rx="15" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.45"/>
+    <text x="593" y="302" fill="#6EE7F9" text-anchor="middle">Docker</text>
+
+    <rect x="646" y="282" width="112" height="30" rx="15" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.45"/>
+    <text x="702" y="302" fill="#34D399" text-anchor="middle">PostgreSQL</text>
+
+    <rect x="768" y="282" width="122" height="30" rx="15" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.45"/>
+    <text x="829" y="302" fill="#FBBF24" text-anchor="middle">GitHub Actions</text>
+  </g>
+</svg>

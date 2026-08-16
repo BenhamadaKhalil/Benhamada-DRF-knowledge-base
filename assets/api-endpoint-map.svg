@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 800" width="1120" height="800" role="img" aria-label="Complete endpoint map of the Recipe API">
+  <style>
+    .t   { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#E6EAF4; }
+    .p   { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#E6EAF4; font-size:13px; }
+    .d   { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#93A0BE; font-size:12px; }
+    .cap { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#93A0BE; font-size:12px; }
+    .grp { fill:#0E1526; stroke:#24304D; stroke-width:1.5; }
+    .row { fill:#131A2E; }
+    .vb  { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; font-size:11px; font-weight:600; }
+  </style>
+
+  <rect width="1120" height="800" rx="18" fill="#0B1020"/>
+  <text x="40" y="52" class="t" font-size="26" font-weight="700">Endpoint map</text>
+  <text x="40" y="78" class="cap">19 endpoints · 3 routers · one auth scheme</text>
+  <line x1="40" y1="96" x2="1080" y2="96" stroke="#24304D"/>
+
+  <!-- legend -->
+  <g class="vb">
+    <rect x="740" y="36" width="46" height="22" rx="6" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.5"/>
+    <text x="763" y="51" fill="#34D399" text-anchor="middle">GET</text>
+    <rect x="794" y="36" width="52" height="22" rx="6" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.5"/>
+    <text x="820" y="51" fill="#6EE7F9" text-anchor="middle">POST</text>
+    <rect x="854" y="36" width="46" height="22" rx="6" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+    <text x="877" y="51" fill="#FBBF24" text-anchor="middle">PUT</text>
+    <rect x="908" y="36" width="60" height="22" rx="6" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+    <text x="938" y="51" fill="#FBBF24" text-anchor="middle">PATCH</text>
+    <rect x="976" y="36" width="66" height="22" rx="6" fill="#2B1218" stroke="#FB7185" stroke-opacity="0.5"/>
+    <text x="1009" y="51" fill="#FB7185" text-anchor="middle">DELETE</text>
+  </g>
+  <text x="1042" y="78" class="cap" text-anchor="end">🔒 = requires Authorization: Token &lt;key&gt;</text>
+
+  <!-- USER -->
+  <rect x="40" y="120" width="1040" height="176" rx="14" class="grp" stroke="#A78BFA" stroke-opacity="0.4"/>
+  <text x="64" y="148" class="t" font-size="16" font-weight="600" fill="#A78BFA">/api/user/</text>
+  <text x="180" y="148" class="d">identity — the only public surface of the API</text>
+
+  <rect x="64" y="162" width="992" height="36" rx="8" class="row"/>
+  <rect x="76" y="172" width="52" height="18" rx="5" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.5"/>
+  <text x="102" y="185" class="vb" fill="#6EE7F9" text-anchor="middle">POST</text>
+  <text x="146" y="186" class="p">/api/user/create/</text>
+  <text x="420" y="186" class="d">register — returns the user, never the password</text>
+  <text x="1044" y="186" class="d" text-anchor="end">201</text>
+
+  <rect x="64" y="204" width="992" height="36" rx="8" class="row"/>
+  <rect x="76" y="214" width="52" height="18" rx="5" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.5"/>
+  <text x="102" y="227" class="vb" fill="#6EE7F9" text-anchor="middle">POST</text>
+  <text x="146" y="228" class="p">/api/user/token/</text>
+  <text x="420" y="228" class="d">exchange email + password for a token</text>
+  <text x="1044" y="228" class="d" text-anchor="end">200</text>
+
+  <rect x="64" y="246" width="992" height="36" rx="8" class="row"/>
+  <rect x="76" y="256" width="46" height="18" rx="5" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="99" y="269" class="vb" fill="#34D399" text-anchor="middle">GET</text>
+  <rect x="128" y="256" width="46" height="18" rx="5" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="151" y="269" class="vb" fill="#FBBF24" text-anchor="middle">PUT</text>
+  <rect x="180" y="256" width="58" height="18" rx="5" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="209" y="269" class="vb" fill="#FBBF24" text-anchor="middle">PATCH</text>
+  <text x="252" y="270" class="p">/api/user/me/  🔒</text>
+  <text x="490" y="270" class="d">read / update the authenticated user's own profile</text>
+  <text x="1044" y="270" class="d" text-anchor="end">200</text>
+
+  <!-- RECIPE -->
+  <rect x="40" y="312" width="1040" height="218" rx="14" class="grp" stroke="#34D399" stroke-opacity="0.4"/>
+  <text x="64" y="340" class="t" font-size="16" font-weight="600" fill="#34D399">/api/recipe/recipes/</text>
+  <text x="252" y="340" class="d">ModelViewSet + DefaultRouter — five actions from one class</text>
+
+  <rect x="64" y="354" width="992" height="36" rx="8" class="row"/>
+  <rect x="76" y="364" width="46" height="18" rx="5" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="99" y="377" class="vb" fill="#34D399" text-anchor="middle">GET</text>
+  <text x="146" y="378" class="p">/recipes/  🔒</text>
+  <text x="420" y="378" class="d">list — only yours, newest first</text>
+  <text x="1044" y="378" class="d" text-anchor="end">RecipeSerializer</text>
+
+  <rect x="64" y="396" width="992" height="36" rx="8" class="row"/>
+  <rect x="76" y="406" width="52" height="18" rx="5" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.5"/>
+  <text x="102" y="419" class="vb" fill="#6EE7F9" text-anchor="middle">POST</text>
+  <text x="146" y="420" class="p">/recipes/  🔒</text>
+  <text x="420" y="420" class="d">create — perform_create sets user from the token</text>
+  <text x="1044" y="420" class="d" text-anchor="end">201</text>
+
+  <rect x="64" y="438" width="992" height="36" rx="8" class="row"/>
+  <rect x="76" y="448" width="46" height="18" rx="5" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="99" y="461" class="vb" fill="#34D399" text-anchor="middle">GET</text>
+  <rect x="128" y="448" width="46" height="18" rx="5" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="151" y="461" class="vb" fill="#FBBF24" text-anchor="middle">PUT</text>
+  <rect x="180" y="448" width="58" height="18" rx="5" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="209" y="461" class="vb" fill="#FBBF24" text-anchor="middle">PATCH</text>
+  <rect x="244" y="448" width="60" height="18" rx="5" fill="#2B1218" stroke="#FB7185" stroke-opacity="0.5"/>
+  <text x="274" y="461" class="vb" fill="#FB7185" text-anchor="middle">DELETE</text>
+  <text x="318" y="462" class="p">/recipes/{id}/  🔒</text>
+  <text x="560" y="462" class="d">detail — RecipeDetailSerializer adds description</text>
+
+  <rect x="64" y="480" width="992" height="36" rx="8" class="row"/>
+  <rect x="76" y="490" width="52" height="18" rx="5" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.5"/>
+  <text x="102" y="503" class="vb" fill="#6EE7F9" text-anchor="middle">POST</text>
+  <text x="146" y="504" class="p">/recipes/{id}/upload-image/  🔒</text>
+  <text x="490" y="504" class="d">@action(detail=True) + MultiPartParser</text>
+  <text x="1044" y="504" class="d" text-anchor="end">multipart/form-data</text>
+
+  <!-- TAG + INGREDIENT -->
+  <rect x="40" y="546" width="508" height="176" rx="14" class="grp" stroke="#6EE7F9" stroke-opacity="0.4"/>
+  <text x="64" y="574" class="t" font-size="16" font-weight="600" fill="#6EE7F9">/api/recipe/tags/</text>
+  <text x="64" y="596" class="d">ListModelMixin + UpdateModelMixin + DestroyModelMixin</text>
+
+  <rect x="64" y="608" width="460" height="34" rx="8" class="row"/>
+  <rect x="76" y="617" width="46" height="18" rx="5" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="99" y="630" class="vb" fill="#34D399" text-anchor="middle">GET</text>
+  <text x="134" y="631" class="p">/tags/  🔒</text>
+  <text x="300" y="631" class="d">alphabetical, yours only</text>
+
+  <rect x="64" y="648" width="460" height="34" rx="8" class="row"/>
+  <rect x="76" y="657" width="58" height="18" rx="5" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="105" y="670" class="vb" fill="#FBBF24" text-anchor="middle">PATCH</text>
+  <rect x="140" y="657" width="60" height="18" rx="5" fill="#2B1218" stroke="#FB7185" stroke-opacity="0.5"/>
+  <text x="170" y="670" class="vb" fill="#FB7185" text-anchor="middle">DELETE</text>
+  <text x="212" y="671" class="p">/tags/{id}/  🔒</text>
+  <text x="380" y="671" class="d">rename / remove</text>
+
+  <text x="64" y="706" class="cap" fill="#FBBF24">created implicitly — nested inside POST /recipes/</text>
+
+  <rect x="572" y="546" width="508" height="176" rx="14" class="grp" stroke="#6EE7F9" stroke-opacity="0.4"/>
+  <text x="596" y="574" class="t" font-size="16" font-weight="600" fill="#6EE7F9">/api/recipe/ingredients/</text>
+  <text x="596" y="596" class="d">same three mixins — refactored into a shared base class</text>
+
+  <rect x="596" y="608" width="460" height="34" rx="8" class="row"/>
+  <rect x="608" y="617" width="46" height="18" rx="5" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="631" y="630" class="vb" fill="#34D399" text-anchor="middle">GET</text>
+  <text x="666" y="631" class="p">/ingredients/  🔒</text>
+  <text x="850" y="631" class="d">alphabetical, yours only</text>
+
+  <rect x="596" y="648" width="460" height="34" rx="8" class="row"/>
+  <rect x="608" y="657" width="58" height="18" rx="5" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="637" y="670" class="vb" fill="#FBBF24" text-anchor="middle">PATCH</text>
+  <rect x="672" y="657" width="60" height="18" rx="5" fill="#2B1218" stroke="#FB7185" stroke-opacity="0.5"/>
+  <text x="702" y="670" class="vb" fill="#FB7185" text-anchor="middle">DELETE</text>
+  <text x="744" y="671" class="p">/ingredients/{id}/  🔒</text>
+  <text x="940" y="671" class="d">rename / remove</text>
+
+  <text x="596" y="706" class="cap" fill="#FBBF24">BaseRecipeAttrViewSet — write it once, subclass twice</text>
+
+  <!-- filters + docs -->
+  <rect x="40" y="738" width="1040" height="44" rx="12" fill="#131A2E" stroke="#24304D" stroke-width="1.5"/>
+  <text x="64" y="765" class="cap" fill="#6EE7F9">?tags=1,2</text>
+  <text x="170" y="765" class="cap" fill="#6EE7F9">?ingredients=4,7</text>
+  <text x="320" y="765" class="cap" fill="#6EE7F9">?assigned_only=1</text>
+  <text x="480" y="765" class="cap">·</text>
+  <text x="510" y="765" class="cap" fill="#A78BFA">/api/schema/</text>
+  <text x="640" y="765" class="cap" fill="#A78BFA">/api/docs/</text>
+  <text x="760" y="765" class="cap">·</text>
+  <text x="790" y="765" class="cap" fill="#FBBF24">/admin/</text>
+</svg>

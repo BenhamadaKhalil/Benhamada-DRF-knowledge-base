@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 660" width="1100" height="660" role="img" aria-label="The DRF view abstraction ladder from raw Django view up to ModelViewSet">
+  <defs>
+    <marker id="up" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#A78BFA"/>
+    </marker>
+    <linearGradient id="rail" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#FB7185"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .t   { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#E6EAF4; }
+    .hdr { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#E6EAF4; font-weight:600; font-size:17px; }
+    .sub { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#93A0BE; font-size:13px; }
+    .cod { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#6EE7F9; font-size:12px; }
+    .box { fill:#131A2E; stroke:#24304D; stroke-width:1.5; }
+    .cap { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#93A0BE; font-size:11.5px; }
+  </style>
+
+  <rect width="1100" height="660" rx="18" fill="#0B1020"/>
+  <text x="40" y="52" class="t" font-size="26" font-weight="700">The abstraction ladder</text>
+  <text x="40" y="78" class="sub">Every rung above buys you less code and costs you control. Climb only as high as you need.</text>
+  <line x1="40" y1="96" x2="1060" y2="96" stroke="#24304D"/>
+
+  <!-- gradient rail -->
+  <rect x="52" y="130" width="6" height="440" rx="3" fill="url(#rail)" opacity="0.8"/>
+  <text x="30" y="150" class="cap" transform="rotate(-90 30 150)" text-anchor="end" fill="#34D399">most magic</text>
+  <text x="30" y="560" class="cap" transform="rotate(-90 30 560)" text-anchor="start" fill="#FB7185">most control</text>
+
+  <!-- rung 5 -->
+  <rect x="90" y="126" width="700" height="80" rx="12" class="box" stroke="#34D399" stroke-opacity="0.5"/>
+  <circle cx="72" cy="166" r="9" fill="#34D399"/>
+  <text x="112" y="156" class="hdr">ModelViewSet</text>
+  <text x="112" y="178" class="sub">All five actions + a router that writes your URLs. One class, one line of urls.py.</text>
+  <text x="112" y="196" class="cod">queryset · serializer_class · router.register("recipes", RecipeViewSet)</text>
+  <rect x="810" y="140" width="250" height="52" rx="10" fill="#0F2A24" stroke="#34D399" stroke-opacity="0.35"/>
+  <text x="935" y="162" class="cap" text-anchor="middle" fill="#34D399">list retrieve create</text>
+  <text x="935" y="180" class="cap" text-anchor="middle" fill="#34D399">update destroy</text>
+
+  <!-- rung 4 -->
+  <rect x="90" y="222" width="700" height="80" rx="12" class="box" stroke="#6EE7F9" stroke-opacity="0.5"/>
+  <circle cx="72" cy="262" r="9" fill="#6EE7F9"/>
+  <text x="112" y="252" class="hdr">ListCreateAPIView · RetrieveUpdateDestroyAPIView</text>
+  <text x="112" y="274" class="sub">Pre-mixed combos. The REST-correct pairing of a collection URL and a detail URL.</text>
+  <text x="112" y="292" class="cod">GET/POST /recipes/   ·   GET/PUT/PATCH/DELETE /recipes/5/</text>
+  <rect x="810" y="236" width="250" height="52" rx="10" fill="#101E3A" stroke="#6EE7F9" stroke-opacity="0.35"/>
+  <text x="935" y="266" class="cap" text-anchor="middle" fill="#6EE7F9">you pick the combo</text>
+
+  <!-- rung 3 -->
+  <rect x="90" y="318" width="700" height="80" rx="12" class="box" stroke="#A78BFA" stroke-opacity="0.5"/>
+  <circle cx="72" cy="358" r="9" fill="#A78BFA"/>
+  <text x="112" y="348" class="hdr">GenericAPIView + mixins</text>
+  <text x="112" y="370" class="sub">Adds get_queryset(), get_serializer(), pagination, filtering. Mixins add one action each.</text>
+  <text x="112" y="388" class="cod">ListModelMixin · CreateModelMixin · RetrieveModelMixin · UpdateModelMixin · DestroyModelMixin</text>
+  <rect x="810" y="332" width="250" height="52" rx="10" fill="#1A1633" stroke="#A78BFA" stroke-opacity="0.35"/>
+  <text x="935" y="362" class="cap" text-anchor="middle" fill="#A78BFA">mix exactly what you need</text>
+
+  <!-- rung 2 -->
+  <rect x="90" y="414" width="700" height="80" rx="12" class="box" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <circle cx="72" cy="454" r="9" fill="#FBBF24"/>
+  <text x="112" y="444" class="hdr">APIView</text>
+  <text x="112" y="466" class="sub">You write get() / post() by hand. DRF still gives you Request, Response, auth, throttling.</text>
+  <text x="112" y="484" class="cod">def get(self, request): return Response({...}, status=status.HTTP_200_OK)</text>
+  <rect x="810" y="428" width="250" height="52" rx="10" fill="#2B1F10" stroke="#FBBF24" stroke-opacity="0.35"/>
+  <text x="935" y="458" class="cap" text-anchor="middle" fill="#FBBF24">non-CRUD endpoints live here</text>
+
+  <!-- rung 1 -->
+  <rect x="90" y="510" width="700" height="80" rx="12" class="box" stroke="#FB7185" stroke-opacity="0.5"/>
+  <circle cx="72" cy="550" r="9" fill="#FB7185"/>
+  <text x="112" y="540" class="hdr">django.views.View  /  def view(request)</text>
+  <text x="112" y="562" class="sub">Raw Django. No serializers, no content negotiation, no browsable API. You build it all.</text>
+  <text x="112" y="580" class="cod">return JsonResponse(data, safe=False)</text>
+  <rect x="810" y="524" width="250" height="52" rx="10" fill="#2B1218" stroke="#FB7185" stroke-opacity="0.35"/>
+  <text x="935" y="554" class="cap" text-anchor="middle" fill="#FB7185">total control, total work</text>
+
+  <path d="M400,510 L400,498" stroke="#A78BFA" stroke-width="2" marker-end="url(#up)"/>
+  <path d="M400,414 L400,402" stroke="#A78BFA" stroke-width="2" marker-end="url(#up)"/>
+  <path d="M400,318 L400,306" stroke="#A78BFA" stroke-width="2" marker-end="url(#up)"/>
+  <path d="M400,222 L400,210" stroke="#A78BFA" stroke-width="2" marker-end="url(#up)"/>
+
+  <text x="40" y="626" class="cap">Choosing rule — standard CRUD on a model? ModelViewSet. One odd endpoint (/token/, /export/, /webhook/)? APIView. Everything else? Generic. — Noetix by KB</text>
+</svg>

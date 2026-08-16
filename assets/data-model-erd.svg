@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" role="img" aria-label="Entity relationship diagram for the Recipe API data model">
+  <style>
+    .t   { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#E6EAF4; }
+    .th  { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#E6EAF4; font-weight:600; font-size:15px; }
+    .f   { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#C7D0E4; font-size:12px; }
+    .ty  { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#7E8CAC; font-size:11px; }
+    .key { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#FBBF24; font-size:11px; }
+    .cap { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#93A0BE; font-size:12px; }
+    .box { fill:#131A2E; stroke:#24304D; stroke-width:1.5; }
+    .rel { stroke:#6EE7F9; stroke-width:1.8; fill:none; }
+  </style>
+
+  <rect width="1100" height="620" rx="18" fill="#0B1020"/>
+  <text x="40" y="52" class="t" font-size="26" font-weight="700">Data model</text>
+  <text x="40" y="78" class="cap">four tables, one join table — every endpoint in this API is a view onto this picture</text>
+  <line x1="40" y1="96" x2="1060" y2="96" stroke="#24304D"/>
+
+  <!-- User -->
+  <rect x="60" y="140" width="270" height="196" rx="12" class="box" stroke="#A78BFA" stroke-opacity="0.55"/>
+  <rect x="60" y="140" width="270" height="36" rx="12" fill="#1A1633"/>
+  <rect x="60" y="164" width="270" height="12" fill="#1A1633"/>
+  <text x="80" y="165" class="th" fill="#A78BFA">User</text>
+  <text x="312" y="164" class="ty" text-anchor="end">AUTH_USER_MODEL</text>
+  <text x="80" y="200" class="key">PK</text><text x="112" y="200" class="f">id</text>
+  <text x="80" y="224" class="key">UQ</text><text x="112" y="224" class="f">email</text><text x="312" y="224" class="ty" text-anchor="end">EmailField</text>
+  <text x="112" y="248" class="f">name</text><text x="312" y="248" class="ty" text-anchor="end">CharField</text>
+  <text x="112" y="272" class="f">password</text><text x="312" y="272" class="ty" text-anchor="end">hashed</text>
+  <text x="112" y="296" class="f">is_active</text><text x="312" y="296" class="ty" text-anchor="end">Boolean</text>
+  <text x="112" y="320" class="f">is_staff</text><text x="312" y="320" class="ty" text-anchor="end">Boolean</text>
+
+  <!-- Recipe -->
+  <rect x="420" y="140" width="270" height="292" rx="12" class="box" stroke="#34D399" stroke-opacity="0.55"/>
+  <rect x="420" y="140" width="270" height="36" rx="12" fill="#0F2A24"/>
+  <rect x="420" y="164" width="270" height="12" fill="#0F2A24"/>
+  <text x="440" y="165" class="th" fill="#34D399">Recipe</text>
+  <text x="672" y="164" class="ty" text-anchor="end">core.Recipe</text>
+  <text x="440" y="200" class="key">PK</text><text x="472" y="200" class="f">id</text>
+  <text x="440" y="224" class="key">FK</text><text x="472" y="224" class="f">user</text><text x="672" y="224" class="ty" text-anchor="end">CASCADE</text>
+  <text x="472" y="248" class="f">title</text><text x="672" y="248" class="ty" text-anchor="end">CharField(255)</text>
+  <text x="472" y="272" class="f">description</text><text x="672" y="272" class="ty" text-anchor="end">TextField(blank)</text>
+  <text x="472" y="296" class="f">time_minutes</text><text x="672" y="296" class="ty" text-anchor="end">Integer</text>
+  <text x="472" y="320" class="f">price</text><text x="672" y="320" class="ty" text-anchor="end">Decimal(5,2)</text>
+  <text x="472" y="344" class="f">link</text><text x="672" y="344" class="ty" text-anchor="end">CharField(blank)</text>
+  <text x="472" y="368" class="f">image</text><text x="672" y="368" class="ty" text-anchor="end">ImageField</text>
+  <text x="440" y="392" class="key">M2M</text><text x="480" y="392" class="f">tags</text>
+  <text x="440" y="416" class="key">M2M</text><text x="480" y="416" class="f">ingredients</text>
+
+  <!-- Tag -->
+  <rect x="790" y="140" width="250" height="124" rx="12" class="box" stroke="#6EE7F9" stroke-opacity="0.55"/>
+  <rect x="790" y="140" width="250" height="36" rx="12" fill="#101E3A"/>
+  <rect x="790" y="164" width="250" height="12" fill="#101E3A"/>
+  <text x="810" y="165" class="th" fill="#6EE7F9">Tag</text>
+  <text x="810" y="200" class="key">PK</text><text x="842" y="200" class="f">id</text>
+  <text x="810" y="224" class="key">FK</text><text x="842" y="224" class="f">user</text><text x="1022" y="224" class="ty" text-anchor="end">CASCADE</text>
+  <text x="842" y="248" class="f">name</text><text x="1022" y="248" class="ty" text-anchor="end">CharField(255)</text>
+
+  <!-- Ingredient -->
+  <rect x="790" y="308" width="250" height="124" rx="12" class="box" stroke="#6EE7F9" stroke-opacity="0.55"/>
+  <rect x="790" y="308" width="250" height="36" rx="12" fill="#101E3A"/>
+  <rect x="790" y="332" width="250" height="12" fill="#101E3A"/>
+  <text x="810" y="333" class="th" fill="#6EE7F9">Ingredient</text>
+  <text x="810" y="368" class="key">PK</text><text x="842" y="368" class="f">id</text>
+  <text x="810" y="392" class="key">FK</text><text x="842" y="392" class="f">user</text><text x="1022" y="392" class="ty" text-anchor="end">CASCADE</text>
+  <text x="842" y="416" class="f">name</text><text x="1022" y="416" class="ty" text-anchor="end">CharField(255)</text>
+
+  <!-- relations -->
+  <path class="rel" d="M330,224 L376,224 L376,224 L416,224"/>
+  <circle cx="376" cy="224" r="3.5" fill="#6EE7F9"/>
+  <text x="373" y="212" class="cap" text-anchor="middle" font-size="11">1</text>
+  <text x="404" y="212" class="cap" text-anchor="middle" font-size="11" fill="#6EE7F9">∞</text>
+  <text x="373" y="252" class="cap" font-size="11">owns</text>
+
+  <path class="rel" d="M690,392 L740,392 L740,202 L786,202"/>
+  <text x="712" y="382" class="cap" font-size="11" text-anchor="middle">∞</text>
+  <text x="768" y="194" class="cap" font-size="11" text-anchor="middle">∞</text>
+
+  <path class="rel" d="M690,416 L720,416 L720,370 L786,370"/>
+  <text x="712" y="438" class="cap" font-size="11" text-anchor="middle">∞</text>
+
+  <path class="rel" d="M195,336 L195,470 L905,470 L905,436" stroke-dasharray="6 5" stroke-opacity="0.6"/>
+  <text x="550" y="462" class="cap" text-anchor="middle">every Tag and Ingredient is also scoped to its owning User</text>
+
+  <!-- notes -->
+  <rect x="60" y="500" width="980" height="86" rx="12" fill="#131A2E" stroke="#FBBF24" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="84" y="528" class="th" fill="#FBBF24">The one rule that makes this API safe</text>
+  <text x="84" y="552" class="cap">Every model carries user = ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE).</text>
+  <text x="84" y="574" class="cap">Every get_queryset() therefore ends in .filter(user=self.request.user) — object-level isolation with no per-object permission class.</text>
+</svg>

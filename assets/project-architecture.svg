@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 720" width="1120" height="720" role="img" aria-label="Recipe API project architecture — containers, apps and layers">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6EE7F9"/>
+    </marker>
+  </defs>
+  <style>
+    .t   { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#E6EAF4; }
+    .hdr { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#E6EAF4; font-weight:600; font-size:15px; }
+    .sub { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#93A0BE; font-size:11.5px; }
+    .box { fill:#131A2E; stroke:#24304D; stroke-width:1.5; }
+    .grp { fill:#0E1526; stroke:#24304D; stroke-width:1.5; stroke-dasharray:7 5; }
+    .cap { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#93A0BE; font-size:12px; }
+  </style>
+
+  <rect width="1120" height="720" rx="18" fill="#0B1020"/>
+  <text x="40" y="52" class="t" font-size="26" font-weight="700">Recipe API — the whole machine</text>
+  <text x="40" y="78" class="cap">what runs where, and which file owns which job</text>
+  <line x1="40" y1="96" x2="1080" y2="96" stroke="#24304D"/>
+
+  <!-- docker compose boundary -->
+  <rect x="40" y="120" width="1040" height="450" rx="16" class="grp"/>
+  <text x="62" y="146" class="cap" fill="#6EE7F9">docker-compose.yml  —  local dev environment</text>
+
+  <!-- app container -->
+  <rect x="66" y="164" width="660" height="382" rx="14" fill="#101828" stroke="#34D399" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="88" y="190" class="hdr" fill="#34D399">service: app</text>
+  <text x="88" y="208" class="sub">python:3.9-alpine · port 8000 · volume ./app:/app</text>
+
+  <!-- django project -->
+  <rect x="88" y="222" width="616" height="66" rx="10" class="box" stroke="#A78BFA" stroke-opacity="0.45"/>
+  <text x="106" y="246" class="hdr">app/  — the Django project</text>
+  <text x="106" y="266" class="sub">settings.py · urls.py · wsgi.py     &#160;·&#160;     "created once, edited forever"</text>
+  <text x="106" y="282" class="sub">INSTALLED_APPS · REST_FRAMEWORK · AUTH_USER_MODEL · DATABASES</text>
+
+  <!-- apps row -->
+  <rect x="88" y="302" width="146" height="118" rx="10" class="box" stroke="#6EE7F9" stroke-opacity="0.4"/>
+  <text x="161" y="326" class="hdr" text-anchor="middle">core</text>
+  <text x="161" y="348" class="sub" text-anchor="middle">models.py</text>
+  <text x="161" y="366" class="sub" text-anchor="middle">admin.py</text>
+  <text x="161" y="384" class="sub" text-anchor="middle">management/</text>
+  <text x="161" y="402" class="sub" text-anchor="middle" fill="#FBBF24">wait_for_db</text>
+
+  <rect x="244" y="302" width="146" height="118" rx="10" class="box" stroke="#6EE7F9" stroke-opacity="0.4"/>
+  <text x="317" y="326" class="hdr" text-anchor="middle">user</text>
+  <text x="317" y="348" class="sub" text-anchor="middle">serializers.py</text>
+  <text x="317" y="366" class="sub" text-anchor="middle">views.py</text>
+  <text x="317" y="384" class="sub" text-anchor="middle">urls.py</text>
+  <text x="317" y="402" class="sub" text-anchor="middle" fill="#34D399">/create /token /me</text>
+
+  <rect x="400" y="302" width="146" height="118" rx="10" class="box" stroke="#6EE7F9" stroke-opacity="0.4"/>
+  <text x="473" y="326" class="hdr" text-anchor="middle">recipe</text>
+  <text x="473" y="348" class="sub" text-anchor="middle">ViewSets</text>
+  <text x="473" y="366" class="sub" text-anchor="middle">serializers.py</text>
+  <text x="473" y="384" class="sub" text-anchor="middle">DefaultRouter</text>
+  <text x="473" y="402" class="sub" text-anchor="middle" fill="#34D399">recipes tags ingredients</text>
+
+  <rect x="556" y="302" width="148" height="118" rx="10" class="box" stroke="#FBBF24" stroke-opacity="0.4"/>
+  <text x="630" y="326" class="hdr" text-anchor="middle">tests</text>
+  <text x="630" y="348" class="sub" text-anchor="middle">test_models.py</text>
+  <text x="630" y="366" class="sub" text-anchor="middle">test_recipe_api.py</text>
+  <text x="630" y="384" class="sub" text-anchor="middle">test_admin.py</text>
+  <text x="630" y="402" class="sub" text-anchor="middle" fill="#FBBF24">TDD: red → green</text>
+
+  <!-- static/media -->
+  <rect x="88" y="434" width="300" height="94" rx="10" class="box"/>
+  <text x="238" y="458" class="hdr" text-anchor="middle">static &amp; media volumes</text>
+  <text x="238" y="480" class="sub" text-anchor="middle">/vol/web/static  ·  /vol/web/media</text>
+  <text x="238" y="500" class="sub" text-anchor="middle">MEDIA_ROOT — uploaded recipe images</text>
+  <text x="238" y="518" class="sub" text-anchor="middle">survives container rebuilds</text>
+
+  <rect x="400" y="434" width="304" height="94" rx="10" class="box"/>
+  <text x="552" y="458" class="hdr" text-anchor="middle">drf-spectacular</text>
+  <text x="552" y="480" class="sub" text-anchor="middle">/api/schema/  →  OpenAPI 3 YAML</text>
+  <text x="552" y="500" class="sub" text-anchor="middle">/api/docs/    →  Swagger UI</text>
+  <text x="552" y="518" class="sub" text-anchor="middle">docs generated from your code, never stale</text>
+
+  <!-- db container -->
+  <rect x="748" y="164" width="306" height="200" rx="14" fill="#101828" stroke="#6EE7F9" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="770" y="190" class="hdr" fill="#6EE7F9">service: db</text>
+  <text x="770" y="210" class="sub">postgres:13-alpine</text>
+  <rect x="770" y="224" width="262" height="122" rx="10" class="box"/>
+  <text x="901" y="248" class="hdr" text-anchor="middle">PostgreSQL</text>
+  <text x="901" y="270" class="sub" text-anchor="middle">named volume: dev-db-data</text>
+  <text x="901" y="290" class="sub" text-anchor="middle">POSTGRES_DB / USER / PASSWORD</text>
+  <text x="901" y="312" class="sub" text-anchor="middle" fill="#FBBF24">starts slower than app</text>
+  <text x="901" y="332" class="sub" text-anchor="middle" fill="#FBBF24">→ hence wait_for_db</text>
+
+  <path d="M708,344 L744,300" stroke="#6EE7F9" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="726" y="380" class="sub" text-anchor="middle">ORM</text>
+
+  <!-- ci box -->
+  <rect x="748" y="384" width="306" height="162" rx="14" fill="#101828" stroke="#FBBF24" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="770" y="410" class="hdr" fill="#FBBF24">.github/workflows/checks.yml</text>
+  <text x="770" y="432" class="sub">on: [push]</text>
+  <rect x="770" y="444" width="262" height="86" rx="10" class="box"/>
+  <text x="901" y="468" class="sub" text-anchor="middle">docker compose run --rm app sh -c</text>
+  <text x="901" y="490" class="sub" text-anchor="middle" fill="#34D399">"python manage.py test"</text>
+  <text x="901" y="512" class="sub" text-anchor="middle" fill="#34D399">"flake8"</text>
+
+  <!-- flow bottom -->
+  <text x="40" y="616" class="t" font-size="17" font-weight="600">The dependency rule</text>
+  <rect x="40" y="632" width="1040" height="56" rx="12" class="box"/>
+  <text x="64" y="666" class="cap" fill="#6EE7F9">urls.py</text>
+  <text x="140" y="666" class="cap">→</text>
+  <text x="170" y="666" class="cap" fill="#A78BFA">views.py (thin)</text>
+  <text x="300" y="666" class="cap">→</text>
+  <text x="330" y="666" class="cap" fill="#FBBF24">serializers.py (validation + create/update)</text>
+  <text x="670" y="666" class="cap">→</text>
+  <text x="700" y="666" class="cap" fill="#34D399">models.py (truth)</text>
+  <text x="850" y="666" class="cap">→</text>
+  <text x="880" y="666" class="cap">migrations → SQL</text>
+</svg>

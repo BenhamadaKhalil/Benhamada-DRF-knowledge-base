@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 700" width="1160" height="700" role="img" aria-label="The lifecycle of a Django REST Framework request">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6EE7F9"/>
+    </marker>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34D399"/>
+    </marker>
+    <marker id="arx" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FB7185"/>
+    </marker>
+  </defs>
+  <style>
+    .t   { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#E6EAF4; }
+    .m   { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#93A0BE; }
+    .hdr { font-family: ui-sans-serif,'Segoe UI',Helvetica,Arial,sans-serif; fill:#E6EAF4; font-weight:600; font-size:16px; }
+    .sub { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#93A0BE; font-size:11.5px; }
+    .lbl { font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#6EE7F9; font-size:11.5px; }
+    .lbl2{ font-family: ui-monospace,'SF Mono',Menlo,Consolas,monospace; fill:#FB7185; font-size:11.5px; }
+    .box { fill:#131A2E; stroke:#24304D; stroke-width:1.5; }
+  </style>
+
+  <rect width="1160" height="700" rx="18" fill="#0B1020"/>
+  <text x="40" y="52" class="t" font-size="26" font-weight="700">The life of a DRF request</text>
+  <text x="40" y="78" class="m" font-size="13.5">one HTTP call, eight checkpoints — know where your bug lives</text>
+  <line x1="40" y1="96" x2="1120" y2="96" stroke="#24304D"/>
+
+  <!-- client -->
+  <rect x="40" y="130" width="180" height="86" rx="12" class="box" stroke="#6EE7F9" stroke-opacity="0.5"/>
+  <text x="130" y="162" class="hdr" text-anchor="middle">Client</text>
+  <text x="130" y="182" class="sub" text-anchor="middle">curl / browser / app</text>
+  <text x="130" y="200" class="sub" text-anchor="middle" fill="#6EE7F9">POST /api/recipes/</text>
+
+  <!-- 1 urls -->
+  <rect x="290" y="130" width="200" height="86" rx="12" class="box"/>
+  <text x="304" y="156" class="lbl">1</text>
+  <text x="390" y="158" class="hdr" text-anchor="middle">URL Router</text>
+  <text x="390" y="178" class="sub" text-anchor="middle">urls.py / DefaultRouter</text>
+  <text x="390" y="196" class="sub" text-anchor="middle">path → view</text>
+
+  <!-- 2 middleware -->
+  <rect x="560" y="130" width="200" height="86" rx="12" class="box"/>
+  <text x="574" y="156" class="lbl">2</text>
+  <text x="660" y="158" class="hdr" text-anchor="middle">Middleware</text>
+  <text x="660" y="178" class="sub" text-anchor="middle">CORS · session · CSRF</text>
+  <text x="660" y="196" class="sub" text-anchor="middle">Django layer, not DRF</text>
+
+  <!-- 3 dispatch -->
+  <rect x="830" y="130" width="200" height="86" rx="12" class="box" stroke="#A78BFA" stroke-opacity="0.5"/>
+  <text x="844" y="156" class="lbl">3</text>
+  <text x="930" y="158" class="hdr" text-anchor="middle">APIView.dispatch()</text>
+  <text x="930" y="178" class="sub" text-anchor="middle">wraps request/response</text>
+  <text x="930" y="196" class="sub" text-anchor="middle">enters DRF territory</text>
+
+  <path d="M220,173 L286,173" stroke="#6EE7F9" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M490,173 L556,173" stroke="#6EE7F9" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M760,173 L826,173" stroke="#6EE7F9" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M930,220 L930,246 L560,246 L560,268" stroke="#6EE7F9" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+
+  <!-- 4 auth -->
+  <rect x="330" y="272" width="220" height="92" rx="12" class="box"/>
+  <text x="344" y="298" class="lbl">4</text>
+  <text x="440" y="300" class="hdr" text-anchor="middle">Authentication</text>
+  <text x="440" y="320" class="sub" text-anchor="middle">TokenAuthentication</text>
+  <text x="440" y="338" class="sub" text-anchor="middle">sets request.user</text>
+  <text x="440" y="356" class="sub" text-anchor="middle" fill="#FB7185">fails → 401</text>
+
+  <!-- 5 perms -->
+  <rect x="600" y="272" width="220" height="92" rx="12" class="box"/>
+  <text x="614" y="298" class="lbl">5</text>
+  <text x="710" y="300" class="hdr" text-anchor="middle">Permissions</text>
+  <text x="710" y="320" class="sub" text-anchor="middle">IsAuthenticated · custom</text>
+  <text x="710" y="338" class="sub" text-anchor="middle">+ throttling</text>
+  <text x="710" y="356" class="sub" text-anchor="middle" fill="#FB7185">fails → 403 / 429</text>
+
+  <path d="M550,318 L596,318" stroke="#6EE7F9" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M710,368 L710,394 L440,394 L440,416" stroke="#6EE7F9" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+
+  <!-- 6 handler -->
+  <rect x="330" y="420" width="220" height="92" rx="12" class="box" stroke="#A78BFA" stroke-opacity="0.5"/>
+  <text x="344" y="446" class="lbl">6</text>
+  <text x="440" y="448" class="hdr" text-anchor="middle">View handler</text>
+  <text x="440" y="468" class="sub" text-anchor="middle">get() · post() · perform_create()</text>
+  <text x="440" y="486" class="sub" text-anchor="middle">get_queryset()</text>
+  <text x="440" y="504" class="sub" text-anchor="middle">your business logic</text>
+
+  <!-- 7 serializer -->
+  <rect x="600" y="420" width="220" height="92" rx="12" class="box" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="614" y="446" class="lbl">7</text>
+  <text x="710" y="448" class="hdr" text-anchor="middle">Serializer</text>
+  <text x="710" y="468" class="sub" text-anchor="middle">is_valid() → validated_data</text>
+  <text x="710" y="486" class="sub" text-anchor="middle">create() / update()</text>
+  <text x="710" y="504" class="sub" text-anchor="middle" fill="#FB7185">fails → 400</text>
+
+  <!-- 8 db -->
+  <rect x="870" y="420" width="200" height="92" rx="12" class="box" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="884" y="446" class="lbl">8</text>
+  <text x="970" y="448" class="hdr" text-anchor="middle">ORM → PostgreSQL</text>
+  <text x="970" y="468" class="sub" text-anchor="middle">QuerySet → SQL</text>
+  <text x="970" y="486" class="sub" text-anchor="middle">select_related()</text>
+  <text x="970" y="504" class="sub" text-anchor="middle">prefetch_related()</text>
+
+  <path d="M550,466 L596,466" stroke="#6EE7F9" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M820,466 L866,466" stroke="#6EE7F9" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- return path -->
+  <path d="M970,516 L970,562 L850,562" stroke="#34D399" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+  <rect x="600" y="536" width="250" height="72" rx="12" class="box" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="725" y="564" class="hdr" text-anchor="middle">Renderer</text>
+  <text x="725" y="584" class="sub" text-anchor="middle">JSONRenderer / BrowsableAPI</text>
+  <text x="725" y="600" class="sub" text-anchor="middle">Response(data, status=201)</text>
+
+  <path d="M596,572 L228,572" stroke="#34D399" stroke-width="2" marker-end="url(#ar2)"/>
+  <rect x="40" y="536" width="180" height="72" rx="12" class="box" stroke="#34D399" stroke-opacity="0.5"/>
+  <text x="130" y="568" class="hdr" text-anchor="middle">201 Created</text>
+  <text x="130" y="590" class="sub" text-anchor="middle">application/json</text>
+
+  <!-- exception rail -->
+  <rect x="40" y="272" width="250" height="240" rx="12" fill="#1B1020" stroke="#FB7185" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="165" y="302" class="hdr" text-anchor="middle" fill="#FB7185">exception_handler</text>
+  <text x="165" y="330" class="sub" text-anchor="middle">any raised APIException</text>
+  <text x="165" y="350" class="sub" text-anchor="middle">short-circuits to a response</text>
+  <text x="60" y="384" class="sub">401  NotAuthenticated</text>
+  <text x="60" y="406" class="sub">403  PermissionDenied</text>
+  <text x="60" y="428" class="sub">404  NotFound</text>
+  <text x="60" y="450" class="sub">405  MethodNotAllowed</text>
+  <text x="60" y="472" class="sub">429  Throttled</text>
+  <text x="60" y="494" class="sub">400  ValidationError</text>
+
+  <path d="M330,318 L296,318" stroke="#FB7185" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arx)"/>
+  <path d="M330,466 L296,466" stroke="#FB7185" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arx)"/>
+
+  <text x="40" y="660" class="m" font-size="12.5">Debug rule of thumb — 401/403: step 4-5 · 400: step 7 · 404: step 1 or get_queryset() · slow: step 8 · Noetix by KB</text>
+</svg>
