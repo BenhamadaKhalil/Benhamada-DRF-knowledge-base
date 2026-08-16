@@ -1,3 +1,12 @@
+---
+title: "Nested Serialization"
+aliases: ["Nested Serializers"]
+section: "11.Build tag API"
+stage: 3
+status: growing
+tags: [drf, django, tags, nested-serialization]
+updated: 2026-08-16
+---
 ### 🔹 What Is Nested Serialization?
 
 - **Nested serialization** = using a serializer _inside_ another serializer.

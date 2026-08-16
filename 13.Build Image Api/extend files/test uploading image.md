@@ -1,3 +1,11 @@
+---
+title: "test uploading image"
+section: "13.Build Image Api"
+stage: 3
+status: growing
+tags: [drf, django, images, file-upload, media]
+updated: 2026-08-16
+---
 
 ## Test Setup
 

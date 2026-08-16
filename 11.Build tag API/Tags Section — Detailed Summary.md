@@ -1,3 +1,11 @@
+---
+title: "Tags Section — Detailed Summary"
+section: "11.Build tag API"
+stage: 3
+status: growing
+tags: [drf, django, tags, nested-serialization]
+updated: 2026-08-16
+---
 ### 1. **Tag Model Implementation**
 
 - Created a new **Tag** model in the database.

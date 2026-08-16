@@ -1,3 +1,11 @@
+---
+title: "📸 Recipe Image Upload API — Implementation"
+section: "13.Build Image Api"
+stage: 3
+status: growing
+tags: [drf, django, images, file-upload, media]
+updated: 2026-08-16
+---
 ## Goal
 
 Implement the **API endpoint** for uploading images to recipes using Django REST Framework, based on the tests written earlier.

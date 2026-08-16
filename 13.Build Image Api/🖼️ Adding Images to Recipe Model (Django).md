@@ -1,3 +1,11 @@
+---
+title: "🖼️ Adding Images to Recipe Model (Django)"
+section: "13.Build Image Api"
+stage: 3
+status: growing
+tags: [drf, django, images, file-upload, media]
+updated: 2026-08-16
+---
 ## Goal
 
 Allow the **Recipe model** to store uploaded images using Django’s `ImageField`, with a **unique file path** for each image.

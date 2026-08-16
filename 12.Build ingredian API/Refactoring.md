@@ -1,3 +1,11 @@
+---
+title: "Refactoring"
+section: "12.Build ingredian API"
+stage: 3
+status: growing
+tags: [drf, django, ingredients, refactoring]
+updated: 2026-08-16
+---
 ## 🟦 What Is Refactoring?
 
 Refactoring = **restructuring code** without changing its external behavior.

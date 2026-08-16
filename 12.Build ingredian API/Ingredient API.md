@@ -1,3 +1,11 @@
+---
+title: "Ingredient API"
+section: "12.Build ingredian API"
+stage: 3
+status: growing
+tags: [drf, django, ingredients, refactoring]
+updated: 2026-08-16
+---
 # Ingredient API – Section Overview
 
 ## Purpose of This Section

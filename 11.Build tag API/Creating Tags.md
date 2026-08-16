@@ -1,3 +1,11 @@
+---
+title: "Creating Tags"
+section: "11.Build tag API"
+stage: 3
+status: growing
+tags: [drf, django, tags, nested-serialization]
+updated: 2026-08-16
+---
 ## 🏷️ Creating Tags When Creating a Recipe (Nested Writable Serializer)
 
 ### 🎯 Goal

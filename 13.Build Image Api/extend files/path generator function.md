@@ -1,3 +1,11 @@
+---
+title: "path generator function"
+section: "13.Build Image Api"
+stage: 3
+status: growing
+tags: [drf, django, images, file-upload, media]
+updated: 2026-08-16
+---
 ## `os.path.splitext(filename)[1]`
 
 `splitext()` **splits a filename into two parts**: the name and the extension. It returns a **tuple** with two elements:

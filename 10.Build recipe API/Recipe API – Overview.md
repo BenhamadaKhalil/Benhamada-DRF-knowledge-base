@@ -1,3 +1,11 @@
+---
+title: "Recipe API – Overview"
+section: "10.Build recipe API"
+stage: 3
+status: growing
+tags: [drf, django, recipe-api, viewsets, serializers]
+updated: 2026-08-16
+---
 ## 📌 Purpose of This Section
 
 In this part of the course, we build a **Recipe API** with full CRUD functionality.  

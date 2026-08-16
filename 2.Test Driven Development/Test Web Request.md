@@ -1,3 +1,11 @@
+---
+title: "Test Web Request"
+section: "2.Test Driven Development"
+stage: 1
+status: growing
+tags: [drf, django, tdd, testing]
+updated: 2026-08-16
+---
 # 🧪 Test Driven Development (TDD) — Django Notes
 
 > 💡 **Core idea:** Write tests first, then write code that makes the tests pass.

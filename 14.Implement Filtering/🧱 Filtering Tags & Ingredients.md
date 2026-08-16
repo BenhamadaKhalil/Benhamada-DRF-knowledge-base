@@ -1,3 +1,11 @@
+---
+title: "🧱 Filtering Tags & Ingredients"
+section: "14.Implement Filtering"
+stage: 3
+status: growing
+tags: [drf, django, filtering, query-params]
+updated: 2026-08-16
+---
 ## 🎯 Goal of This Lesson
 
 - Add an `assigned_only` filter to:

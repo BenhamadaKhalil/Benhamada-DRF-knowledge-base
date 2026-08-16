@@ -1,3 +1,11 @@
+---
+title: "Filtering & API Improvements"
+section: "14.Implement Filtering"
+stage: 3
+status: growing
+tags: [drf, django, filtering, query-params]
+updated: 2026-08-16
+---
 ## 1️⃣ Filter Recipes by Tags & Ingredients
 
 We implemented the ability to **filter recipes** using:

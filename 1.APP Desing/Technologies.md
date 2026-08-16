@@ -1,3 +1,11 @@
+---
+title: "Technologies"
+section: "1.APP Desing"
+stage: 1
+status: growing
+tags: [drf, django, app-design, architecture]
+updated: 2026-08-16
+---
 # Django Course — Technologies Overview (Python, Django, DRF, Postgres, Docker, etc.)
 
 ---

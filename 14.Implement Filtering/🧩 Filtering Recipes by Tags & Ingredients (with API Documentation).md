@@ -1,3 +1,11 @@
+---
+title: "🧩 Filtering Recipes by Tags & Ingredients (with API Documentation)"
+section: "14.Implement Filtering"
+stage: 3
+status: growing
+tags: [drf, django, filtering, query-params]
+updated: 2026-08-16
+---
 ## 🎯 Goal of This Lesson
 
 - Allow clients (frontend) to **filter recipes** by:

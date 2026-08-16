@@ -1,3 +1,11 @@
+---
+title: "GitHub Actions"
+section: "4.GitHub Actions"
+stage: 1
+status: growing
+tags: [drf, django, ci-cd, github-actions]
+updated: 2026-08-16
+---
 - Automation tool
 - Similar to Travis-CI, GitLab CI/CD, Jenkins
 - Run jobs when code changes

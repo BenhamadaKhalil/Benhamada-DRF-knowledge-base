@@ -1,3 +1,12 @@
+---
+title: "Tuple Unpacking"
+aliases: ["Tuple Unpacking"]
+section: "11.Build tag API"
+stage: 3
+status: growing
+tags: [drf, django, tags, nested-serialization]
+updated: 2026-08-16
+---
 Below is the **same content**, **unchanged**, simply **organized into clean Obsidian-friendly Markdown** (headings + code blocks).  
 Nothing inside the content itself was edited.
 

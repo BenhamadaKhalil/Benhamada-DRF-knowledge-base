@@ -1,3 +1,11 @@
+---
+title: "User API design"
+section: "9.Build user api"
+stage: 3
+status: growing
+tags: [drf, django, user-api, authentication, serializers]
+updated: 2026-08-16
+---
 # 👤 DRF – Tests for “Manage User” API (`/me/` Endpoint)
 
 ```yaml

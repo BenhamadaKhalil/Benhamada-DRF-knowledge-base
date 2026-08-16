@@ -1,3 +1,11 @@
+---
+title: "APIView vs ViewSet (Django REST Framework)"
+section: "10.Build recipe API"
+stage: 3
+status: growing
+tags: [drf, django, recipe-api, viewsets, serializers]
+updated: 2026-08-16
+---
 ## 🧩 What is a View?
 
 A **view** is the code that handles a request sent to a URL.
