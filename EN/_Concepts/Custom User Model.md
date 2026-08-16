@@ -74,5 +74,5 @@ from core.models import User                                                   #
 ## 🔗 Deeper
 
 - [[1.Custom User Model in Django]] · [[2.Custom User Model – Design]]
-- [[4.Implementing a Custom User Model]] · [[5.normalize email in `create_user`]]
+- [[4.Implementing a Custom User Model]] · [[5.normalize email in create_user]]
 - [[Django Models]] · [[Password Hashing]]

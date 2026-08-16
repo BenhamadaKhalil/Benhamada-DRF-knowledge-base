@@ -22,14 +22,19 @@ flowchart LR
     A["🧱 Stage 1<br/>Foundations<br/><i>environment + tests</i>"] --> B["🦴 Stage 2<br/>The spine<br/><i>db + users + admin</i>"]
     B --> C["🔌 Stage 3<br/>The API<br/><i>the same loop ×5</i>"]
     C --> D["🚀 Stage 4<br/>Production<br/><i>make it survive</i>"]
-    D -.->|"and then you<br/>build your own thing"| E["🌍 Your project"]
+    D --> E["🧱 Stage 5<br/>Django underneath<br/><i>what DRF sits on</i>"]
+    E -.->|"and then you<br/>build your own thing"| F["🌍 Your project"]
 
     style A fill:#101E3A,stroke:#6EE7F9,color:#E6EAF4
     style B fill:#1A1633,stroke:#A78BFA,color:#E6EAF4
     style C fill:#0F2A24,stroke:#34D399,color:#E6EAF4
     style D fill:#2B1F10,stroke:#FBBF24,color:#E6EAF4
-    style E fill:#131A2E,stroke:#24304D,color:#E6EAF4
+    style E fill:#131A2E,stroke:#6EE7F9,color:#E6EAF4
+    style F fill:#131A2E,stroke:#24304D,color:#E6EAF4
 ```
+
+> [!INFO] Stage 5 is not "last"
+> [[0.Django Core Index|Django Core]] is written as a **companion**, not a finale. Dip into it the moment a note assumes something you don't know — what middleware is, how a QuerySet becomes SQL, why `save()` doesn't validate. Reading it cover-to-cover at the end also works; reading it never does not.
 
 ---
 
@@ -41,9 +46,9 @@ flowchart LR
 | --- | --------------- | ---------------------------------------------------------------- | -------------------------------------- |
 | 01  | App Design      | The 19 endpoints you're heading toward                            | You can draw the endpoint map yourself |
 | 02  | System Setup    | Docker, Docker Compose, an editor, Git                            | `docker --version` works               |
-| 03  | Project Setup   | Dockerfile, compose, requirements, flake8, `startproject`         | The dev server answers on :8000        |
-| 04  | GitHub Actions  | CI that runs your tests and linter on every push                  | Green tick on GitHub                   |
-| 05  | TDD             | Red → green → refactor, `TestCase`, `SimpleTestCase`, mocking     | You write the test *first* once        |
+| 03  | Test Driven Development | Red → green → refactor, unit tests, assertions            | You write the test *first* once        |
+| 04  | Project Setup   | Dockerfile, compose, requirements, flake8, `startproject`         | The dev server answers on :8000        |
+| 05  | GitHub Actions  | CI that runs your tests and linter on every push                  | Green tick on GitHub                   |
 
 > [!WARNING] The trap in Stage 1
 > Almost everyone rushes this to "get to the real Django". Then they spend Stage 3 debugging their environment instead of their code. **Docker + CI + flake8 first.** It is the whole point.
@@ -57,9 +62,10 @@ flowchart LR
 | #   | Section            | The one idea that matters                                                            |
 | --- | ------------------ | ------------------------------------------------------------------------------------ |
 | 06  | Configure Database | Postgres starts *slower* than Django → `wait_for_db` is a real production pattern      |
-| 07  | Custom User Model  | Swap it on **day one**. Swapping later is a migration nightmare.                       |
-| 08  | Django Admin       | Free CRUD UI. Register a model, get a back office for nothing.                          |
-| 09  | API Documentation  | `drf-spectacular` reads your code → docs can never go stale                             |
+| 07  | TDD with Django    | `TestCase`, mocking, and the test failures you'll actually hit                          |
+| 08  | Custom User Model  | Swap it on **day one**. Swapping later is a migration nightmare.                       |
+| 09  | Django Admin       | Free CRUD UI. Register a model, get a back office for nothing.                          |
+| 10  | API Documentation  | `drf-spectacular` reads your code → docs can never go stale                             |
 
 ```mermaid
 flowchart TD
@@ -96,12 +102,12 @@ flowchart LR
 
 | #   | Section        | New concept introduced                                       |
 | --- | -------------- | ------------------------------------------------------------ |
-| 10  | User API       | Token auth, `write_only`, `IsAuthenticated`                  |
-| 11  | Recipe API     | `ModelViewSet`, routers, `get_serializer_class()`            |
-| 12  | Tag API        | Nested serializers, `get_or_create` on write                  |
-| 13  | Ingredient API | Refactoring two viewsets into one base class                  |
-| 14  | Image API      | `@action`, `MultiPartParser`, media files                     |
-| 15  | Filtering      | Query params, `OpenApiParameter`, comma-separated IDs         |
+| 11  | User API       | Token auth, `write_only`, `IsAuthenticated`                  |
+| 12  | Recipe API     | `ModelViewSet`, routers, `get_serializer_class()`            |
+| 13  | Tag API        | Nested serializers, `get_or_create` on write                  |
+| 14  | Ingredient API | Refactoring two viewsets into one base class                  |
+| 15  | Image API      | `@action`, `MultiPartParser`, media files                     |
+| 16  | Filtering      | Query params, `OpenApiParameter`, comma-separated IDs         |
 
 ---
 
@@ -111,11 +117,24 @@ flowchart LR
 
 | #   | Section         | What it covers                                                            |
 | --- | --------------- | ------------------------------------------------------------------------- |
-| 16  | Deployment      | Production compose, uWSGI, nginx proxy, env vars, `collectstatic`          |
-| 17  | All Fixes       | The Django refresher + the errors you will actually hit                     |
-| 18  | Production DRF  | Pagination, throttling, caching, N+1, permissions, JWT, transactions, Celery |
-| 19  | Reference       | Cheat sheets you will open weekly for years                                 |
-| 20  | Interview       | Q&A, ADRs, decision trees, war stories                                      |
+| 17  | Deployment      | Production compose, uWSGI, nginx proxy, env vars, `collectstatic`          |
+| 18  | All Fixes       | The Django refresher + the errors you will actually hit                     |
+| 19  | Production DRF  | Pagination, throttling, caching, N+1, permissions, JWT, transactions, Celery |
+| 20  | Reference       | Cheat sheets you will open weekly for years                                 |
+| 21  | Interview       | Q&A, ADRs, decision trees, war stories                                      |
+
+---
+
+## Stage 5 — Django underneath
+
+**Goal:** stop treating the layer below DRF as magic.
+
+| #   | Section       | What it covers                                                                 |
+| --- | ------------- | ------------------------------------------------------------------------------ |
+| 22  | Django Core   | Settings, middleware, QuerySets and `fetch_mode`, model constraints, forms, the auth system, caching, security, async, Mailers, management commands, i18n |
+| 23  | What to Master Next | The roadmap beyond this vault                                            |
+
+Written against **Django 6.1** (released 5 August 2026). If you're upgrading an existing project, start at [[1.What's New in Django 6.1]] — it lists everything in this vault that release dates, and why.
 
 ---
 

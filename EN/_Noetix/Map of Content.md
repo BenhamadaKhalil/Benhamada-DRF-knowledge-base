@@ -60,9 +60,9 @@ updated: 2026-08-16
 - [[6.Fixing Database Race Condition]]
 - [[7.Creating the Core App for Custom Commands]]
 - [[8.Create wait_for_db]]
-- [[9.Implement `wait_for_db`]]
+- [[9.Implement wait_for_db]]
 - [[10.Database Migrations]]
-- [[11.Run `wait_for_db`]]
+- [[11.Run wait_for_db]]
 
 ## 07 · TDD with Django
 
@@ -79,7 +79,7 @@ updated: 2026-08-16
 - [[3.Writing Unit Tests]]
 - [[4.Implementing a Custom User Model]]
 - [[4.Implementing a Custom User Model 1]]
-- [[5.normalize email in `create_user`]]
+- [[5.normalize email in create_user]]
 - [[6.Add “email is required” feature]]
 - [[7.Add “create superuser”]]
 - [[8.testing the Custom User Model]]
@@ -105,7 +105,7 @@ updated: 2026-08-16
 
 - [[User API design]]
 - [[1.Design & Endpoints]]
-- [[2.Creating the `user` App]]
+- [[2.Creating the user App]]
 - [[3.User API Tests]]
 - [[4.Authentication in Django REST Framework]] ⭐
 - [[5.Implementing Create User API]]
@@ -123,7 +123,7 @@ updated: 2026-08-16
 - [[2.APIView vs ViewSet]] ⭐
 - [[3.Creating the Recipe Model Test]]
 - [[4.Implementing the Recipe Model in Django]]
-- [[5.Creating the `recipe` App for API Endpoints]]
+- [[5.Creating the recipe App for API Endpoints]]
 - [[6.Testing the Recipe List API Endpoint]]
 - [[7.create an API endpoint to list recipes]]
 - [[8.Write tests for recipe detail API Follow Along English]]

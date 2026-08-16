@@ -38,6 +38,15 @@
 		{"id":"p7","type":"file","file":"EN/21.Interview and Real World/Debugging Decision Tree.md","x":-800,"y":800,"width":360,"height":80},
 		{"id":"p8","type":"file","file":"EN/18.All Fixes/2.Errors You Will Actually Hit.md","x":-400,"y":800,"width":360,"height":80},
 		{"id":"p9","type":"file","file":"EN/23.What to Master Next/DRF Mastery Roadmap.md","x":0,"y":800,"width":720,"height":80},
+
+		{"id":"g5","type":"group","label":"5 · DJANGO UNDERNEATH  —  what DRF sits on (Django 6.1)","x":-1240,"y":940,"width":2000,"height":300},
+		{"id":"d1","type":"file","file":"EN/22.Django Core/0.Django Core Index.md","x":-1200,"y":1020,"width":360,"height":120},
+		{"id":"d2","type":"file","file":"EN/22.Django Core/1.What's New in Django 6.1.md","x":-800,"y":1020,"width":360,"height":120},
+		{"id":"d3","type":"file","file":"EN/22.Django Core/4.QuerySets in Depth.md","x":-400,"y":1020,"width":360,"height":120},
+		{"id":"d4","type":"file","file":"EN/22.Django Core/3.Middleware.md","x":0,"y":1020,"width":360,"height":120},
+		{"id":"d5","type":"file","file":"EN/22.Django Core/9.Security Features.md","x":400,"y":1020,"width":320,"height":120},
+		{"id":"d6","type":"text","text":"### 🆕 Django 6.1 — 5 Aug 2026\n\n`fetch_mode(FETCH_PEERS)` is now a **native N+1 fix**. `EMAIL_*` → `MAILERS`. PBKDF2 at 1.5M iterations. **Python 3.12+ and PostgreSQL 15+ only** — the course pins 3.9 and 13, and neither runs 6.1.","x":-1200,"y":1160,"width":760,"height":60,"color":"3"},
+		{"id":"d7","type":"text","text":"**Read this section as a companion, not a finale.** Dip in the moment a note assumes something you don't know.","x":-400,"y":1160,"width":1120,"height":60,"color":"5"},
 		{"id":"diag","type":"file","file":"assets/drf-request-lifecycle.svg","x":820,"y":-520,"width":700,"height":420},
 		{"id":"diag2","type":"file","file":"assets/data-model-erd.svg","x":820,"y":-60,"width":700,"height":400},
 		{"id":"diag3","type":"file","file":"assets/drf-view-hierarchy.svg","x":820,"y":500,"width":700,"height":400}
@@ -46,6 +55,7 @@
 		{"id":"e1","fromNode":"g1","fromSide":"bottom","toNode":"g2","toSide":"top","color":"5"},
 		{"id":"e2","fromNode":"g2","fromSide":"bottom","toNode":"g3","toSide":"top","color":"6"},
 		{"id":"e3","fromNode":"g3","fromSide":"bottom","toNode":"g4","toSide":"top","color":"4"},
+		{"id":"e5","fromNode":"g4","fromSide":"bottom","toNode":"g5","toSide":"top","color":"5"},
 		{"id":"e4","fromNode":"home","fromSide":"bottom","toNode":"g1","toSide":"top","color":"3"}
 	]
 }

@@ -61,5 +61,5 @@ Keep views thin. Business logic belongs in serializers, models, or a dedicated s
 ## 🔗 Deeper
 
 - [[1.Django Refresher - Projects, Apps and the Five Files]]
-- [[9.Create the Django Project]] · [[2.Creating the `user` App]]
+- [[9.Create the Django Project]] · [[2.Creating the user App]]
 - [[Django Models]] · [[3.Architecture Decision Records]]
