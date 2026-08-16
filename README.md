@@ -41,14 +41,26 @@ Every note answers four questions in the same order: **what is this**, **why doe
 
 | If you are… | Go to |
 | --- | --- |
-| new to DRF | [Learning Path](_Noetix/Learning%20Path.md) |
-| looking for one specific note | [Map of Content](_Noetix/Map%20of%20Content.md) |
-| stuck on a bug right now | [Debugging Decision Tree](19.Interview%20and%20Real%20World/Debugging%20Decision%20Tree.md) |
-| about to deploy | [Production Readiness Checklist](17.Production%20DRF/0.Production%20Readiness%20Checklist.md) |
-| looking something up | [Reference Index](18.Reference/0.Reference%20Index.md) |
-| preparing for an interview | [Interview Index](19.Interview%20and%20Real%20World/0.Interview%20Index.md) |
+| new to DRF | [Learning Path](EN/_Noetix/Learning%20Path.md) |
+| looking for one specific note | [Map of Content](EN/_Noetix/Map%20of%20Content.md) |
+| stuck on a bug right now | [Debugging Decision Tree](EN/21.Interview%20and%20Real%20World/Debugging%20Decision%20Tree.md) |
+| on Django 6.1 (or upgrading) | [What's New in Django 6.1](EN/22.Django%20Core/1.What's%20New%20in%20Django%206.1.md) |
+| about to deploy | [Production Readiness Checklist](EN/19.Production%20DRF/0.Production%20Readiness%20Checklist.md) |
+| looking something up | [Reference Index](EN/20.Reference/0.Reference%20Index.md) |
+| preparing for an interview | [Interview Index](EN/21.Interview%20and%20Real%20World/0.Interview%20Index.md) |
 
-Or open [Noetix Home](_Noetix/Noetix%20Home.md) — the dashboard everything hangs off.
+Or open [Noetix Home](EN/_Noetix/Noetix%20Home.md) — the dashboard everything hangs off.
+
+---
+
+## Languages
+
+| | | |
+| --- | --- | --- |
+| 🇬🇧 **English** | [`EN/`](EN) | ✅ complete |
+| 🇸🇦 **العربية** | [`AR/`](AR) | 🚧 in progress — [plan](AR/README.md) |
+
+Diagrams in [`assets/`](assets) are shared by both editions.
 
 ---
 
@@ -68,11 +80,11 @@ Or open [Noetix Home](_Noetix/Noetix%20Home.md) — the dashboard everything han
 
 | | Section | Covers |
 | --- | --- | --- |
-| 01 | [App Design](1.APP%20Desing) | The brief: 19 endpoints, auth, browsable API |
-| 02 | [System Setup](2.system%20Setup) | Docker, Compose, verifying the toolchain |
-| 03 | [Test Driven Development](2.Test%20Driven%20Development) | Red → green → refactor |
-| 04 | [Project Setup](3.Project_Setup) | Dockerfile, compose, requirements, flake8 |
-| 05 | [GitHub Actions](4.GitHub%20Actions) | CI running tests and lint on every push |
+| 01 | [App Design](EN/01.App%20Design) | The brief: 19 endpoints, auth, browsable API |
+| 02 | [System Setup](EN/02.System%20Setup) | Docker, Compose, verifying the toolchain |
+| 03 | [Test Driven Development](EN/03.Test%20Driven%20Development) | Red → green → refactor |
+| 04 | [Project Setup](EN/04.Project%20Setup) | Dockerfile, compose, requirements, flake8 |
+| 05 | [GitHub Actions](EN/05.GitHub%20Actions) | CI running tests and lint on every push |
 
 ### 🦴 Stage 2 — The spine
 
@@ -80,11 +92,11 @@ Or open [Noetix Home](_Noetix/Noetix%20Home.md) — the dashboard everything han
 
 | | Section | Covers |
 | --- | --- | --- |
-| 06 | [Configure Database](5.Configure%20Database) | PostgreSQL, migrations, `wait_for_db` |
-| 07 | [TDD with Django](5.Test%20Driven%20Development%20with%20Django) | `TestCase`, mocking, common test failures |
-| 08 | [Create User Model](6.Create%20User%20Model) | Custom user model, email as identifier |
-| 09 | [Setup Django Admin](7.Setup%20Django%20Admin) | Free CRUD back office |
-| 10 | [Documentation API](8.Documentation%20API) | drf-spectacular, OpenAPI, Swagger UI |
+| 06 | [Configure Database](EN/06.Configure%20Database) | PostgreSQL, migrations, `wait_for_db` |
+| 07 | [TDD with Django](EN/07.TDD%20with%20Django) | `TestCase`, mocking, common test failures |
+| 08 | [Create User Model](EN/08.Create%20User%20Model) | Custom user model, email as identifier |
+| 09 | [Setup Django Admin](EN/09.Setup%20Django%20Admin) | Free CRUD back office |
+| 10 | [Documentation API](EN/10.Documentation%20API) | drf-spectacular, OpenAPI, Swagger UI |
 
 ### 🔌 Stage 3 — Building the API
 
@@ -92,12 +104,12 @@ Or open [Noetix Home](_Noetix/Noetix%20Home.md) — the dashboard everything han
 
 | | Section | Covers |
 | --- | --- | --- |
-| 11 | [Build User API](9.Build%20user%20api) | Token auth, `write_only`, `/me/` |
-| 12 | [Build Recipe API](10.Build%20recipe%20API) | `ModelViewSet`, routers, serializer selection |
-| 13 | [Build Tag API](11.Build%20tag%20API) | Nested serializers, `get_or_create` writes |
-| 14 | [Build Ingredient API](12.Build%20ingredian%20API) | Extracting a shared base viewset |
-| 15 | [Build Image API](13.Build%20Image%20Api) | `@action`, `MultiPartParser`, media files |
-| 16 | [Implement Filtering](14.Implement%20Filtering) | Query params, `OpenApiParameter` |
+| 11 | [Build User API](EN/11.Build%20User%20API) | Token auth, `write_only`, `/me/` |
+| 12 | [Build Recipe API](EN/12.Build%20Recipe%20API) | `ModelViewSet`, routers, serializer selection |
+| 13 | [Build Tag API](EN/13.Build%20Tag%20API) | Nested serializers, `get_or_create` writes |
+| 14 | [Build Ingredient API](EN/14.Build%20Ingredient%20API) | Extracting a shared base viewset |
+| 15 | [Build Image API](EN/15.Build%20Image%20API) | `@action`, `MultiPartParser`, media files |
+| 16 | [Implement Filtering](EN/16.Implement%20Filtering) | Query params, `OpenApiParameter` |
 
 ### 🚀 Stage 4 — Production
 
@@ -105,15 +117,24 @@ Or open [Noetix Home](_Noetix/Noetix%20Home.md) — the dashboard everything han
 
 | | Section | Covers |
 | --- | --- | --- |
-| 17 | [Deployment](15.DEPLOYMENT) | Production compose, uWSGI, nginx, secrets, post-deploy checks |
-| 18 | [All Fixes](16.all%20fixes) | Django refresher + the errors you'll actually hit |
-| 19 | [Production DRF](17.Production%20DRF) | Pagination, throttling, caching, N+1, permissions, JWT, signals, transactions, Celery, security, logging, versioning |
-| 20 | [Reference](18.Reference) | Status codes, serializer fields, ViewSets, ORM, testing, Docker, models, glossary |
-| 21 | [Interview & Real World](19.Interview%20and%20Real%20World) | Q&A, war stories, ADRs, debugging method |
+| 17 | [Deployment](EN/17.Deployment) | Production compose, uWSGI, nginx, secrets, post-deploy checks |
+| 18 | [All Fixes](EN/18.All%20Fixes) | Django refresher + the errors you'll actually hit |
+| 19 | [Production DRF](EN/19.Production%20DRF) | Pagination, throttling, caching, N+1, permissions, JWT, signals, transactions, Celery, security, logging, versioning |
+| 20 | [Reference](EN/20.Reference) | Status codes, serializer fields, ViewSets, ORM, testing, Docker, models, glossary |
+| 21 | [Interview & Real World](EN/21.Interview%20and%20Real%20World) | Q&A, war stories, ADRs, debugging method |
+
+### 🧱 Stage 5 — Django underneath
+
+*DRF is a layer on top of Django. The course teaches the layer.*
+
+| | Section | Covers |
+| --- | --- | --- |
+| 22 | [Django Core](EN/22.Django%20Core) | Written against **Django 6.1**: what's new and what it breaks, settings, middleware, querysets and `fetch_mode`, model constraints, forms, the auth system, caching, security, async, Mailers, management commands, i18n |
+| 23 | [What to Master Next](EN/23.What%20to%20Master%20Next) | The roadmap beyond this vault |
 
 ### 🧩 The concept layer
 
-[`_Concepts/`](_Concepts) holds 29 short definition notes for the ideas that recur across sections — [`Token Authentication`](_Concepts/Token%20Authentication.md), [`Permissions`](_Concepts/Permissions.md), [`get_or_create`](_Concepts/get_or_create.md), [`Decimal vs Float`](_Concepts/Decimal%20vs%20Float.md) and the rest. Each is a page you read in a minute, linking out to the note that treats it properly. Start at the [Concept Index](_Concepts/0.Concept%20Index.md).
+[`EN/_Concepts/`](EN/_Concepts) holds 29 short definition notes for the ideas that recur across sections — [`Token Authentication`](EN/_Concepts/Token%20Authentication.md), [`Permissions`](EN/_Concepts/Permissions.md), [`get_or_create`](EN/_Concepts/get_or_create.md), [`Decimal vs Float`](EN/_Concepts/Decimal%20vs%20Float.md) and the rest. Each is a page you read in a minute, linking out to the note that treats it properly. Start at the [Concept Index](EN/_Concepts/0.Concept%20Index.md).
 
 ---
 
@@ -144,10 +165,10 @@ Eight hand-authored SVGs live in [`assets/`](assets). They render identically in
 
 | Canvas | What it's for |
 | --- | --- |
-| [Noetix Atlas](_Noetix/Noetix%20Atlas.canvas) | The entire vault on one board |
-| [Endpoint API](1.APP%20Desing/Endpoint%20API.canvas) | All 19 endpoints, grouped by router |
-| [Request Lifecycle](_Noetix/Request%20Lifecycle.canvas) | Click through each stage of a request |
-| [Decision Trees](_Noetix/Decision%20Trees.canvas) | Six recurring "which do I use?" choices |
+| [Noetix Atlas](EN/_Noetix/Noetix%20Atlas.canvas) | The entire vault on one board |
+| [Endpoint API](EN/01.App%20Design/Endpoint%20API.canvas) | All 19 endpoints, grouped by router |
+| [Request Lifecycle](EN/_Noetix/Request%20Lifecycle.canvas) | Click through each stage of a request |
+| [Decision Trees](EN/_Noetix/Decision%20Trees.canvas) | Six recurring "which do I use?" choices |
 
 ---
 
@@ -161,11 +182,11 @@ Eight hand-authored SVGs live in [`assets/`](assets). They render identically in
 git clone https://github.com/BenhamadaKhalil/Benhamada-DRF-knowledge-base.git
 ```
 
-Then *Open folder as vault* in Obsidian and start at `_Noetix/Noetix Home.md`.
+Then *Open folder as vault* in Obsidian and start at `EN/_Noetix/Noetix Home.md`.
 
 No community plugins required — everything uses core Obsidian features (Canvas, Mermaid, callouts, wikilinks).
 
-**As a study system** — the note anatomy is documented in the [Style Guide](_Noetix/Style%20Guide.md), and there's a blank [Note Template](_Noetix/Note%20Template.md). Fork it and point it at whatever you're learning next.
+**As a study system** — the note anatomy is documented in the [Style Guide](EN/_Noetix/Style%20Guide.md), and there's a blank [Note Template](EN/_Noetix/Note%20Template.md). Fork it and point it at whatever you're learning next.
 
 ---
 

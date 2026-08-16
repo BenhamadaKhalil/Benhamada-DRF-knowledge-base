@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# 🔌 Endpoint Map\n**Noetix by KB** · 19 endpoints · 3 routers · one auth scheme\n\n🔒 = requires `Authorization: Token <key>`","x":-800,"y":-460,"width":1760,"height":120},
+		{"id":"g-user","type":"group","label":"🔐  /api/user/  —  identity","x":-820,"y":-300,"width":580,"height":440},
+		{"id":"u1","type":"text","text":"`POST` **/api/user/create/**\n\nRegister. Returns the user, never the password.\n→ `201 Created`","x":-780,"y":-230,"width":500,"height":100,"color":"6"},
+		{"id":"u2","type":"text","text":"`POST` **/api/user/token/**\n\nEmail + password → token.\n→ `200 OK` `{\"token\": \"9c1f…\"}`","x":-780,"y":-110,"width":500,"height":100,"color":"6"},
+		{"id":"u3","type":"text","text":"`GET` `PUT` `PATCH` **/api/user/me/** 🔒\n\nRead / update your own profile.\n`get_object()` returns `request.user`","x":-780,"y":10,"width":500,"height":100,"color":"6"},
+		{"id":"g-recipe","type":"group","label":"🍲  /api/recipe/recipes/  —  ModelViewSet","x":-180,"y":-300,"width":580,"height":560},
+		{"id":"r1","type":"text","text":"`GET` **/recipes/** 🔒\n\nList — yours only, newest first.\n`RecipeSerializer`","x":-140,"y":-230,"width":500,"height":90,"color":"4"},
+		{"id":"r2","type":"text","text":"`POST` **/recipes/** 🔒\n\nCreate. `perform_create` sets the owner from the token.\n→ `201`","x":-140,"y":-125,"width":500,"height":90,"color":"4"},
+		{"id":"r3","type":"text","text":"`GET` `PUT` `PATCH` `DELETE` **/recipes/{id}/** 🔒\n\n`RecipeDetailSerializer` adds `description`.","x":-140,"y":-20,"width":500,"height":90,"color":"4"},
+		{"id":"r4","type":"text","text":"`POST` **/recipes/{id}/upload-image/** 🔒\n\n`@action(detail=True)` + `MultiPartParser`","x":-140,"y":85,"width":500,"height":90,"color":"4"},
+		{"id":"g-tag","type":"group","label":"🏷️  /api/recipe/tags/","x":440,"y":-300,"width":540,"height":270},
+		{"id":"t1","type":"text","text":"`GET` **/tags/** 🔒\n\nAlphabetical, yours only.","x":480,"y":-230,"width":460,"height":80,"color":"5"},
+		{"id":"t2","type":"text","text":"`PATCH` `DELETE` **/tags/{id}/** 🔒\n\nRename / remove.\n**No `POST`** — tags are born inside recipes.","x":480,"y":-135,"width":460,"height":90,"color":"5"},
+		{"id":"g-ing","type":"group","label":"🥕  /api/recipe/ingredients/","x":440,"y":-10,"width":540,"height":270},
+		{"id":"i1","type":"text","text":"`GET` **/ingredients/** 🔒\n\nAlphabetical, yours only.","x":480,"y":60,"width":460,"height":80,"color":"5"},
+		{"id":"i2","type":"text","text":"`PATCH` `DELETE` **/ingredients/{id}/** 🔒\n\nSame three mixins — shared `BaseRecipeAttrViewSet`.","x":480,"y":155,"width":460,"height":90,"color":"5"},
+		{"id":"filters","type":"text","text":"### 🔍 Query params\n\n`?tags=1,2`\n`?ingredients=4,7`\n`?assigned_only=1`","x":-780,"y":320,"width":320,"height":180,"color":"3"},
+		{"id":"docs","type":"text","text":"### 📄 Docs & admin\n\n`/api/schema/` → OpenAPI 3\n`/api/docs/` → Swagger UI\n`/admin/` → Django admin","x":-420,"y":320,"width":320,"height":180,"color":"3"},
+		{"id":"rule","type":"text","text":"### 🛡️ The rule that makes it safe\n\nEvery model has `user = ForeignKey(...)`.\n\nEvery `get_queryset()` ends in\n`.filter(user=self.request.user)`\n\nObject isolation with no per-object permission class — and another user's row returns **404**, not 403, so nothing leaks.","x":-60,"y":320,"width":480,"height":180,"color":"1"},
+		{"id":"notes","type":"file","file":"EN/01.App Design/APP Design.md","x":460,"y":320,"width":480,"height":180}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"u2","fromSide":"right","toNode":"r1","toSide":"left","label":"Authorization: Token …","color":"6"},
+		{"id":"e2","fromNode":"r2","fromSide":"right","toNode":"t1","toSide":"left","label":"get_or_create","color":"4"},
+		{"id":"e3","fromNode":"r2","fromSide":"right","toNode":"i1","toSide":"left","label":"get_or_create","color":"4"},
+		{"id":"e4","fromNode":"u1","fromSide":"bottom","toNode":"u2","toSide":"top","color":"6"},
+		{"id":"e5","fromNode":"rule","fromSide":"top","toNode":"g-recipe","toSide":"bottom","color":"1"}
+	]
+}
