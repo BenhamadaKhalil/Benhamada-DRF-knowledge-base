@@ -2,11 +2,19 @@
 title: "User API design"
 section: "11.Build User API"
 stage: 3
-status: growing
-tags: [drf, django, user-api, authentication, serializers]
+status: evergreen
+tags: [drf, django, user-api, authentication, tdd]
 updated: 2026-08-16
 ---
-# 👤 DRF – Tests for “Manage User” API (`/me/` Endpoint)
+# DRF – User API Design
+
+This note is the design and build map for the User API module:
+
+- `/user/create/` for registration
+- `/user/token/` for token auth
+- `/user/me/` for authenticated profile access
+
+The `/me/` behavior is covered here with tests so design and behavior stay aligned.
 
 ```yaml
 Tags: [django, drf, testing, tdd, user-api, authentication]

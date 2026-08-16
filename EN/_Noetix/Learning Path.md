@@ -15,6 +15,40 @@ updated: 2026-08-16
 
 ---
 
+## Exit checks by stage
+
+Use this as a quick audit before moving to the next stage.
+
+### Stage 1 — Foundations complete when
+
+- Docker Compose can run the project.
+- `flake8` and the first test run pass locally (or in CI).
+- You can run your first failing test, then make it pass.
+
+### Stage 2 — The spine complete when
+
+- `AUTH_USER_MODEL` is set and migrations are in a clean state.
+- `wait_for_db` and database readiness are covered by tests.
+- Admin pages can create/edit users with a custom user model.
+
+### Stage 3 — API build complete when
+
+- For each of six API sections, you completed: test → serializer/model → view/URL → passing tests.
+- You can explain one endpoint end-to-end without looking at code.
+- You have coverage for authentication and ownership checks where required.
+
+### Stage 4 — Production complete when
+
+- You can deploy once with production settings.
+- You have a hardening checklist and at least one monitoring check wired.
+- Security basics are verified (`DEBUG=False`, secret config, rate limiting where applicable).
+
+### Stage 5 — Django fundamentals complete when
+
+- You can trace a request from middleware to database query behavior.
+- You can explain and measure one real optimization point (for example N+1).
+- You can read a traceback and map it back to framework internals.
+
 ## The shape of the journey
 
 ```mermaid

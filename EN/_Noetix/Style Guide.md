@@ -43,7 +43,7 @@ updated: 2026-08-16
 
 | Field     | Values                                          |
 | --------- | ----------------------------------------------- |
-| `stage`   | `1` foundations · `2` spine · `3` API · `4` production |
+| `stage`   | `1` foundations · `2` spine · `3` API · `4` production · `5` Django fundamentals |
 | `status`  | `seed` (stub) · `growing` (usable) · `evergreen` (trusted) |
 | `tags`    | lowercase, hyphenated, no `#` prefix            |
 

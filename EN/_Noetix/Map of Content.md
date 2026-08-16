@@ -11,6 +11,42 @@ updated: 2026-08-16
 
 ---
 
+## Stage exit checks
+
+Use these 3 questions before leaving a stage:
+
+1. Can I explain why this stage exists in one sentence?
+2. Can I repeat the core loop for one feature without checking the solution?
+3. Is my repository in a testable state for the next stage?
+
+### Stage 1 — Foundations
+
+- `docker compose up` runs.
+- At least one test fails first, then passes after implementation.
+- One endpoint is documented and callable.
+
+### Stage 2 — The spine
+
+- Custom user model + PostgreSQL lifecycle are stable.
+- Admin flows work with the custom user model.
+- Documentation tooling is configured.
+
+### Stage 3 — API loops
+
+- For user, recipes, tags, ingredients, images, and filtering, each loop has tests and passing implementation.
+- Ownership and auth boundaries are enforced on protected endpoints.
+
+### Stage 4 — Production
+
+- Deployment path has been executed end-to-end once.
+- Security hardening and post-deploy steps are in place.
+- Monitoring/rollback thinking is defined.
+
+### Stage 5 — Django fundamentals
+
+- You can inspect middleware, query generation, and auth flow directly.
+- You can trace a user request from router to database query.
+
 ## 01 · App Design
 
 - [[APP Design]] — the brief: 19 endpoints, auth, browsable API

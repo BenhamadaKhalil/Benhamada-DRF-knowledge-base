@@ -1,4 +1,4 @@
----
+﻿---
 title: "Test Driven Development"
 section: "03.Test Driven Development"
 stage: 1
@@ -10,7 +10,7 @@ updated: 2026-08-16
 
 ---
 
-# 1️⃣ What is a Unit Test?
+## 1️⃣ What is a Unit Test?
 
 ## 🎯 Definition
 
@@ -116,7 +116,7 @@ It checks your code every time you run tests.
 
 ---
 
-# 2️⃣ What is Test Driven Development (TDD)?
+## 2️⃣ What is Test Driven Development (TDD)?
 
 ## 🎯 Definition
 
@@ -136,7 +136,7 @@ Write test → Write code → Pass test
 
 ---
 
-# 3️⃣ Traditional Development vs TDD
+## 3️⃣ Traditional Development vs TDD
 
 ## Traditional Approach
 
@@ -164,7 +164,7 @@ Step 6: Run test again
 
 ---
 
-# 4️⃣ TDD Cycle (Core Process)
+## 4️⃣ TDD Cycle (Core Process)
 
 This is the most important concept.
 
@@ -220,7 +220,7 @@ Ensure everything still works.
 
 ---
 
-# 5️⃣ TDD Flow Diagram
+## 5️⃣ TDD Flow Diagram
 
 ```
 Write Test
@@ -240,7 +240,7 @@ This cycle repeats for every feature.
 
 ---
 
-# 6️⃣ Benefits of Test Driven Development
+## 6️⃣ Benefits of Test Driven Development
 
 ## 1. Better code design
 
@@ -274,7 +274,7 @@ Developers trust the codebase.
 
 ---
 
-# 7️⃣ Django Example with TDD
+## 7️⃣ Django Example with TDD
 
 Step 1 — Write test:
 
@@ -290,7 +290,7 @@ Step 3 — Run test → pass
 
 ---
 
-# 8️⃣ Real-World Example (API Development)
+## 8️⃣ Real-World Example (API Development)
 
 Goal: Create API endpoint `/api/users/`
 
@@ -311,7 +311,7 @@ Step 4: Run test → PASS
 
 ---
 
-# 9️⃣ Summary Table
+## 9️⃣ Summary Table
 
 |Concept|Meaning|
 |---|---|
@@ -323,7 +323,7 @@ Step 4: Run test → PASS
 
 ---
 
-# 🔥 Key Takeaway (Very Important)
+## 🔥 Key Takeaway (Very Important)
 
 Normal development:
 
@@ -348,3 +348,5 @@ TDD makes software more reliable, stable, and professional.
 flowchart LR
 		A[Write Test] --> B[Run Test] --> C[Add feature] --> D[Run Test] --> E[Re-factor]
 ```
+
+

@@ -85,3 +85,34 @@ The vault becomes a system.
 ## Before
 
 Personal study notes taken while working through a Django REST Framework course â€” one note per video, summarised from subtitles.
+
+## PR-style Changelog Entry Template
+
+Use this for every future entry:
+
+## 2026-08-16 — `vX.Y.Z` <short title>
+
+### Why this changed
+- <one sentence: user pain point or goal>
+
+### What changed
+#### Added
+- <new notes, templates, sections, files>
+
+#### Changed
+- <refactors, rewrites, renames>
+
+#### Fixed
+- <defects, broken links, formatting issues>
+
+#### Removed
+- <deprecated notes or sections removed>
+
+### Validation
+- [ ] Notes linked from [[Map of Content]] and [[Learning Path]]
+- [ ] Wikilinks checked for broken/ambiguous targets
+- [ ] File names and numbering validated for touched notes
+- [ ] Technical claims tested where code changed
+
+### Risk & follow-up
+- <possible side effects and follow-up tasks>

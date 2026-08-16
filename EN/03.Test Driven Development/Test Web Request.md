@@ -1,4 +1,4 @@
----
+﻿---
 title: "Test Web Request"
 section: "03.Test Driven Development"
 stage: 1
@@ -12,7 +12,7 @@ updated: 2026-08-16
 
 ---
 
-# 🧩 1. Unit Tests
+## 🧩 1. Unit Tests
 
 ## 📌 Definition
 
@@ -100,7 +100,7 @@ They immediately notify you if something breaks.
 
 ---
 
-# 🚀 2. Test Driven Development (TDD)
+## 🚀 2. Test Driven Development (TDD)
 
 ## 📌 Definition
 
@@ -132,7 +132,7 @@ Make test pass
 
 ---
 
-# 🔁 3. TDD Cycle (Core Process)
+## 🔁 3. TDD Cycle (Core Process)
 
 This is the most important concept.
 
@@ -195,7 +195,7 @@ Ensure everything still works.
 
 ---
 
-# 🔄 TDD Cycle Diagram
+## 🔄 TDD Cycle Diagram
 
 ```
 Write Test ✍️
@@ -215,7 +215,7 @@ Repeat for every feature.
 
 ---
 
-# 🌐 4. Django Example (Real Case)
+## 🌐 4. Django Example (Real Case)
 
 ## Goal: Create API endpoint
 
@@ -252,7 +252,7 @@ Endpoint works.
 
 ---
 
-# 🎯 5. Why TDD is Important
+## 🎯 5. Why TDD is Important
 
 ## Main advantages:
 
@@ -269,7 +269,7 @@ Endpoint works.
 
 ---
 
-# 📊 6. Key Concepts Summary
+## 📊 6. Key Concepts Summary
 
 |Concept|Meaning|
 |---|---|
@@ -281,7 +281,7 @@ Endpoint works.
 
 ---
 
-# 🧠 Final Mental Model
+## 🧠 Final Mental Model
 
 ## ❌ Traditional
 
@@ -297,7 +297,7 @@ Write test → Write code → Verify → Improve
 
 ---
 
-# 🧱 Developer Mindset with TDD
+## 🧱 Developer Mindset with TDD
 
 Instead of asking:
 
@@ -308,3 +308,5 @@ You ask:
 > "How should this feature behave?"
 
 Then you implement it correctly.
+
+

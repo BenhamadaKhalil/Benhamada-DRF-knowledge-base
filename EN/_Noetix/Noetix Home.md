@@ -28,6 +28,14 @@ updated: 2026-08-16
 
 ---
 
+## Stage-ready checklist
+
+- Stage 1 complete: environment, test-first habit, and first endpoint works.
+- Stage 2 complete: custom user model, PostgreSQL readiness, and admin.
+- Stage 3 complete: one API section loop repeated with tests passing.
+- Stage 4 complete: deployment path + hardening + monitoring.
+- Stage 5 complete: Django internals map (middleware, queries, auth lifecycle).
+
 ## 🗺️ The whole picture
 
 ![[learning-path.svg]]

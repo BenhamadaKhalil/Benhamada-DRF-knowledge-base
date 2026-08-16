@@ -214,6 +214,26 @@ Corrections are genuinely welcome — a wrong note is worse than no note. See [C
 
 ---
 
+## Changelog discipline
+
+Use a short log for meaningful updates:
+
+- New notes added to the map (with filename + section)
+- Structural fixes (links, frontmatter, stage tags)
+- Content cleanup passes (typos, outdated claims, duplicate topics)
+- Pedagogy upgrades (new checklists, flows, and learning gates)
+
+Suggested format:
+
+```md
+## 2026-08-16
+
+- Updated: EN/01.App%20Design/APP%20Design.md
+- Added: Stage-by-stage exit checks in learning/navigation notes
+- Fixed: User API design note scope and status tags
+- Added: Rollback and incident runbook in production checklist
+```
+
 ## License
 
 Notes and diagrams: [CC BY 4.0](LICENSE) — use them, remix them, teach from them; just keep the attribution.

@@ -1,4 +1,4 @@
----
+﻿---
 title: "TDD"
 section: "03.Test Driven Development"
 stage: 1
@@ -6,8 +6,8 @@ status: growing
 tags: [drf, django, tdd, testing]
 updated: 2026-08-16
 ---
-#### Unit Tests
--  Code which tests code
+## Unit Tests
+Code which tests code
 	- Sets up conditions/inputs
 	- Runs a piece of code
 	- Checks outputs with "assertions"
@@ -19,7 +19,7 @@ updated: 2026-08-16
 
 ---
 
-#### What is TDD
+## What is TDD
 - Development practice
 
 ```mermaid
@@ -29,8 +29,9 @@ flowchart LR
 
 ---
 
-  #### Why use TDD 
+## Why use TDD
 - Better understanding of code
 - Make changes with confidence
 - Reduces bugs
  
+
