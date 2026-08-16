@@ -64,10 +64,19 @@ updated: 2026-08-16
 ### Stage 4 — Production
 > Where a course ends and a real service begins.
 
+> [!TIP] On Django 6.1?
+> Start with [[1.What's New in Django 6.1]] — it lists everything in this vault that the August 2026 release dates, and why.
+
 - [[EN/17.Deployment/1.From Dev Compose to Production|Deployment]]
 - [[EN/19.Production DRF/0.Production Readiness Checklist|Production DRF]]
 - [[EN/20.Reference/0.Reference Index|Reference & cheat sheets]]
 - [[EN/21.Interview and Real World/0.Interview Index|Interview & real world]]
+
+### Stage 5 — Django underneath
+> DRF is a layer on top of Django. The course teaches the layer.
+
+- [[0.Django Core Index]] — settings, middleware, querysets, auth, caching, security, async, i18n
+- [[1.What's New in Django 6.1]] ⭐ — what the August 2026 release changed
 
 ---
 

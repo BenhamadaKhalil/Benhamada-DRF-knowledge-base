@@ -10,10 +10,13 @@ updated: 2026-08-16
 Django never stores a password. It stores a **one-way hash** — PBKDF2 with SHA-256 and a per-user salt, by default.
 
 ```text
-pbkdf2_sha256$390000$KxvT2s...$9zN4bM...
-    │            │        │        │
- algorithm  iterations   salt     hash
+pbkdf2_sha256$1500000$KxvT2s...$9zN4bM...
+    │             │        │        │
+ algorithm   iterations   salt     hash
 ```
+
+> [!INFO] Django 6.1 raised the iteration count to 1,500,000
+> Up from 1,200,000 in 6.0 (and 390,000 in the 4.x era). Existing hashes upgrade transparently — on the next successful login Django sees the stored count is below the current default and re-hashes. See [[1.What's New in Django 6.1]].
 
 ```python
 user.set_password(raw_password)     # ✅ hashes and stores
